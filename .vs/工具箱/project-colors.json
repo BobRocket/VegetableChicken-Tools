@@ -1,0 +1,21 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "99683ff4-def4-4692-ab69-96abd0cad216": {
+      "ProjectGuid": "99683ff4-def4-4692-ab69-96abd0cad216",
+      "DisplayName": "donations",
+      "ColorIndex": 0
+    },
+    "b422bb35-673e-4471-979a-0bbbed74f0ae": {
+      "ProjectGuid": "b422bb35-673e-4471-979a-0bbbed74f0ae",
+      "DisplayName": "About",
+      "ColorIndex": 1
+    },
+    "d39e2157-0a6f-4bca-8616-b3379a28b472": {
+      "ProjectGuid": "d39e2157-0a6f-4bca-8616-b3379a28b472",
+      "DisplayName": "AppMain",
+      "ColorIndex": 2
+    }
+  },
+  "NextColorIndex": 3
+}

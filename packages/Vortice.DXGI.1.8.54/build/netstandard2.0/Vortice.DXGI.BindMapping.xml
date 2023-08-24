@@ -1,0 +1,975 @@
+<?xml version="1.0"?>
+<config id="Vortice.DXGI" xmlns="urn:SharpGen.Config">
+  <var name="THIS_CONFIG_PATH">D:\a\Vortice.Windows\Vortice.Windows\src\Vortice.DXGI\obj\Release\netstandard2.0\SharpGen</var>
+  <include-prolog>
+    // Use unicode
+    #define UNICODE
+
+    // for SAL annotations
+    #define _PREFAST_
+
+    // To force GUID to be declared
+    #define INITGUID
+
+    #define _ALLOW_KEYWORD_MACROS
+
+    // Wrap all declspec for code-gen
+    #define __declspec(x) __attribute__((annotate(#x)))
+  
+
+
+    // Use unicode
+    #define UNICODE
+
+    // for SAL annotations
+    #define _PREFAST_
+
+    // To force GUID to be declared
+    #define INITGUID
+
+    #define _ALLOW_KEYWORD_MACROS
+
+    // Wrap all declspec for code-gen
+    #define __declspec(x) __attribute__((annotate(#x)))
+  
+
+</include-prolog>
+  <naming />
+  <extension>
+    <define struct="Vortice.RawRect" sizeof="16" />
+    <define struct="Vortice.RawRectF" sizeof="16" />
+    <define struct="System.Numerics.Vector2" sizeof="8" />
+    <define struct="System.Numerics.Vector3" sizeof="12" />
+    <define struct="System.Numerics.Vector4" sizeof="16" />
+    <define struct="System.Numerics.Quaternion" sizeof="16" />
+    <define struct="System.Numerics.Matrix3x2" sizeof="24" />
+    <define struct="System.Numerics.Matrix4x4" sizeof="64" />
+    <define struct="System.Numerics.Plane" sizeof="16" />
+    <define struct="Vortice.Mathematics.Point" sizeof="8" />
+    <define struct="Vortice.Mathematics.PointF" sizeof="8" />
+    <define struct="Vortice.Mathematics.Size" sizeof="8" />
+    <define struct="Vortice.Mathematics.SizeF" sizeof="8" />
+    <define struct="Vortice.Mathematics.Rectangle" sizeof="16" />
+    <define struct="Vortice.Mathematics.RectangleF" sizeof="16" />
+    <define struct="Vortice.Mathematics.Color3" sizeof="12" />
+    <define struct="Vortice.Mathematics.Color4" sizeof="16" />
+    <define struct="Vortice.Mathematics.Int3" sizeof="12" />
+    <define struct="Vortice.Mathematics.Int4" sizeof="16" />
+    <define struct="Vortice.Mathematics.Viewport" sizeof="24" />
+    <define struct="Vortice.Mathematics.Box" sizeof="24" />
+    <define struct="Vortice.Mathematics.Matrix3x3" sizeof="36" />
+    <define struct="Vortice.Mathematics.Matrix3x4" sizeof="48" />
+    <define struct="Vortice.Mathematics.Matrix4x3" sizeof="48" />
+    <define struct="Vortice.Mathematics.Matrix5x4" sizeof="80" />
+    <define struct="SharpGen.Runtime.Result" sizeof="4" />
+    <define struct="SharpGen.Runtime.FunctionCallback" sizeof="8" />
+    <define struct="SharpGen.Runtime.PointerSize" sizeof="8" />
+    <define enum="System.IO.SeekOrigin" underlying="System.UInt32" sizeof="4" />
+    <define struct="SharpGen.Runtime.Win32.RawBool" sizeof="4" />
+    <define interface="SharpGen.Runtime.ComObject" />
+    <define interface="SharpGen.Runtime.Win32.PropertyBag" />
+    <define struct="SharpGen.Runtime.Win32.SecurityAttributes" sizeof="16" />
+    <define struct="SharpGen.Runtime.Win32.NativeMessage" sizeof="28" />
+    <define struct="SharpGen.Runtime.Win32.Variant" sizeof="16" />
+    <define struct="SharpGen.Runtime.Win32.BitmapInfoHeader" sizeof="40" />
+    <define struct="SharpGen.Runtime.Result" sizeof="4" />
+    <define struct="SharpGen.Runtime.FunctionCallback" sizeof="8" />
+    <define struct="SharpGen.Runtime.PointerSize" sizeof="8" />
+    <define enum="System.IO.SeekOrigin" underlying="System.UInt32" sizeof="4" />
+    <define struct="SharpGen.Runtime.Win32.RawBool" sizeof="4" align="0" marshal="false" static-marshal="false" custom-new="false" />
+    <define struct="SharpGen.Runtime.Result" sizeof="4" align="0" marshal="false" static-marshal="false" custom-new="false" />
+    <define struct="SharpGen.Runtime.PointerSize" sizeof="8" align="0" marshal="false" static-marshal="false" custom-new="false" />
+    <define struct="SharpGen.Runtime.PointerSize" sizeof="8" align="0" marshal="false" static-marshal="false" custom-new="false" />
+    <define struct="SharpGen.Runtime.Win32.NativeMessage" sizeof="28" align="0" marshal="false" static-marshal="false" custom-new="false" />
+    <define struct="SharpGen.Runtime.Win32.SecurityAttributes" sizeof="16" align="0" marshal="false" static-marshal="false" custom-new="false" />
+    <define struct="SharpGen.Runtime.Win32.Variant" sizeof="16" align="0" marshal="false" static-marshal="false" custom-new="false" />
+    <define struct="SharpGen.Runtime.Win32.Variant" sizeof="16" align="0" marshal="false" static-marshal="false" custom-new="false" />
+    <define interface="SharpGen.Runtime.ComObject" shadow="SharpGen.Runtime.ComObjectShadow" vtbl="SharpGen.Runtime.ComObjectShadow.SharpGen.Runtime.ComObjectVtbl" />
+    <define interface="SharpGen.Runtime.ComObject" shadow="SharpGen.Runtime.ComObjectShadow" vtbl="SharpGen.Runtime.ComObjectShadow.SharpGen.Runtime.ComObjectVtbl" />
+    <define interface="SharpGen.Runtime.ComObject" shadow="SharpGen.Runtime.ComObjectShadow" vtbl="SharpGen.Runtime.ComObjectShadow.SharpGen.Runtime.ComObjectVtbl" />
+    <define interface="SharpGen.Runtime.ComObject" shadow="SharpGen.Runtime.ComObjectShadow" vtbl="SharpGen.Runtime.ComObjectShadow.SharpGen.Runtime.ComObjectVtbl" />
+    <define interface="SharpGen.Runtime.ComObject" shadow="SharpGen.Runtime.ComObjectShadow" vtbl="SharpGen.Runtime.ComObjectShadow.SharpGen.Runtime.ComObjectVtbl" />
+    <define interface="SharpGen.Runtime.ComObject" shadow="SharpGen.Runtime.ComObjectShadow" vtbl="SharpGen.Runtime.ComObjectShadow.SharpGen.Runtime.ComObjectVtbl" />
+    <define interface="SharpGen.Runtime.ComObject" shadow="SharpGen.Runtime.ComObjectShadow" vtbl="SharpGen.Runtime.ComObjectShadow.SharpGen.Runtime.ComObjectVtbl" />
+    <define interface="SharpGen.Runtime.ComObject" shadow="SharpGen.Runtime.ComObjectShadow" vtbl="SharpGen.Runtime.ComObjectShadow.SharpGen.Runtime.ComObjectVtbl" />
+    <define interface="SharpGen.Runtime.Win32.PropertyBag" shadow="SharpGen.Runtime.Win32.PropertyBagShadow" vtbl="SharpGen.Runtime.Win32.PropertyBagShadow.SharpGen.Runtime.Win32.PropertyBagVtbl" />
+    <define interface="SharpGen.Runtime.ComObject" shadow="SharpGen.Runtime.ComObjectShadow" vtbl="SharpGen.Runtime.ComObjectShadow.SharpGen.Runtime.ComObjectVtbl" />
+    <define interface="SharpGen.Runtime.ComObject" shadow="SharpGen.Runtime.ComObjectShadow" vtbl="SharpGen.Runtime.ComObjectShadow.SharpGen.Runtime.ComObjectVtbl" />
+    <define interface="SharpGen.Runtime.ComObject" shadow="SharpGen.Runtime.ComObjectShadow" vtbl="SharpGen.Runtime.ComObjectShadow.SharpGen.Runtime.ComObjectVtbl" />
+    <define struct="SharpGen.Runtime.PointerSize" sizeof="8" align="0" marshal="false" static-marshal="false" custom-new="false" />
+    <define struct="SharpGen.Runtime.PointerSize" sizeof="8" align="0" marshal="false" static-marshal="false" custom-new="false" />
+    <define struct="SharpGen.Runtime.FunctionCallback" sizeof="8" align="0" marshal="false" static-marshal="false" custom-new="false" />
+    <define enum="SharpGen.Runtime.Win32.LockType" underlying="System.Int32" sizeof="4" />
+    <define enum="SharpGen.Runtime.Win32.CommitFlags" underlying="System.Int32" sizeof="4" />
+    <define enum="SharpGen.Runtime.Win32.StorageStatisticsFlags" underlying="System.Int32" sizeof="4" />
+    <define enum="SharpGen.Runtime.ErrorCode" underlying="System.Int32" sizeof="4" />
+    <define struct="SharpGen.Runtime.Win32.StorageStatistics" sizeof="80" align="0" marshal="false" static-marshal="false" custom-new="false" />
+    <define interface="SharpGen.Runtime.IUnknown" native="SharpGen.Runtime.ComObject" shadow="SharpGen.Runtime.ComObjectShadow" vtbl="SharpGen.Runtime.ComObjectShadow.ComObjectVtbl" />
+    <define interface="SharpGen.Runtime.Win32.IStreamBase" native="SharpGen.Runtime.Win32.ComStreamBase" shadow="SharpGen.Runtime.Win32.IStreamBaseShadow" vtbl="SharpGen.Runtime.Win32.IStreamBaseShadow.IStreamBaseVtbl" />
+    <define interface="SharpGen.Runtime.Win32.IStream" native="SharpGen.Runtime.Win32.ComStream" shadow="SharpGen.Runtime.Win32.IStreamShadow" vtbl="SharpGen.Runtime.Win32.IStreamShadow.IStreamVtbl" />
+    <define struct="Vortice.Mathematics.Point" sizeof="8" align="0" marshal="false" static-marshal="false" custom-new="false" />
+    <define struct="Vortice.Mathematics.Size" sizeof="8" align="0" marshal="false" static-marshal="false" custom-new="false" />
+    <define struct="Vortice.RawRect" sizeof="16" align="0" marshal="false" static-marshal="false" custom-new="false" />
+    <define struct="Vortice.Mathematics.Color4" sizeof="16" align="0" marshal="false" static-marshal="false" custom-new="false" />
+    <define struct="SharpGen.Runtime.PointerSize" sizeof="8" align="0" marshal="false" static-marshal="false" custom-new="false" />
+    <define struct="SharpGen.Runtime.PointerSize" sizeof="8" align="0" marshal="false" static-marshal="false" custom-new="false" />
+    <define struct="SharpGen.Runtime.FunctionCallback" sizeof="8" align="0" marshal="false" static-marshal="false" custom-new="false" />
+    <define enum="System.IO.SeekOrigin" underlying="System.UInt32" sizeof="4" />
+    <define struct="SharpGen.Runtime.Win32.RawBool" sizeof="4" align="0" marshal="false" static-marshal="false" custom-new="false" />
+    <define struct="SharpGen.Runtime.Result" sizeof="4" align="0" marshal="false" static-marshal="false" custom-new="false" />
+    <define struct="SharpGen.Runtime.PointerSize" sizeof="8" align="0" marshal="false" static-marshal="false" custom-new="false" />
+    <define struct="SharpGen.Runtime.PointerSize" sizeof="8" align="0" marshal="false" static-marshal="false" custom-new="false" />
+    <define struct="SharpGen.Runtime.Win32.NativeMessage" sizeof="28" align="0" marshal="false" static-marshal="false" custom-new="false" />
+    <define struct="SharpGen.Runtime.Win32.SecurityAttributes" sizeof="16" align="0" marshal="false" static-marshal="false" custom-new="false" />
+    <define struct="SharpGen.Runtime.Win32.Variant" sizeof="16" align="0" marshal="false" static-marshal="false" custom-new="false" />
+    <define struct="SharpGen.Runtime.Win32.Variant" sizeof="16" align="0" marshal="false" static-marshal="false" custom-new="false" />
+    <define interface="SharpGen.Runtime.ComObject" shadow="SharpGen.Runtime.ComObjectShadow" vtbl="SharpGen.Runtime.ComObjectShadow.SharpGen.Runtime.ComObjectVtbl" />
+    <define interface="SharpGen.Runtime.ComObject" shadow="SharpGen.Runtime.ComObjectShadow" vtbl="SharpGen.Runtime.ComObjectShadow.SharpGen.Runtime.ComObjectVtbl" />
+    <define interface="SharpGen.Runtime.ComObject" shadow="SharpGen.Runtime.ComObjectShadow" vtbl="SharpGen.Runtime.ComObjectShadow.SharpGen.Runtime.ComObjectVtbl" />
+    <define interface="SharpGen.Runtime.ComObject" shadow="SharpGen.Runtime.ComObjectShadow" vtbl="SharpGen.Runtime.ComObjectShadow.SharpGen.Runtime.ComObjectVtbl" />
+    <define interface="SharpGen.Runtime.ComObject" shadow="SharpGen.Runtime.ComObjectShadow" vtbl="SharpGen.Runtime.ComObjectShadow.SharpGen.Runtime.ComObjectVtbl" />
+    <define interface="SharpGen.Runtime.ComObject" shadow="SharpGen.Runtime.ComObjectShadow" vtbl="SharpGen.Runtime.ComObjectShadow.SharpGen.Runtime.ComObjectVtbl" />
+    <define interface="SharpGen.Runtime.ComObject" shadow="SharpGen.Runtime.ComObjectShadow" vtbl="SharpGen.Runtime.ComObjectShadow.SharpGen.Runtime.ComObjectVtbl" />
+    <define interface="SharpGen.Runtime.ComObject" shadow="SharpGen.Runtime.ComObjectShadow" vtbl="SharpGen.Runtime.ComObjectShadow.SharpGen.Runtime.ComObjectVtbl" />
+    <define interface="SharpGen.Runtime.Win32.PropertyBag" shadow="SharpGen.Runtime.Win32.PropertyBagShadow" vtbl="SharpGen.Runtime.Win32.PropertyBagShadow.SharpGen.Runtime.Win32.PropertyBagVtbl" />
+    <define interface="SharpGen.Runtime.ComObject" shadow="SharpGen.Runtime.ComObjectShadow" vtbl="SharpGen.Runtime.ComObjectShadow.SharpGen.Runtime.ComObjectVtbl" />
+    <define interface="SharpGen.Runtime.ComObject" shadow="SharpGen.Runtime.ComObjectShadow" vtbl="SharpGen.Runtime.ComObjectShadow.SharpGen.Runtime.ComObjectVtbl" />
+    <define interface="SharpGen.Runtime.ComObject" shadow="SharpGen.Runtime.ComObjectShadow" vtbl="SharpGen.Runtime.ComObjectShadow.SharpGen.Runtime.ComObjectVtbl" />
+    <define enum="SharpGen.Runtime.Win32.LockType" underlying="System.Int32" sizeof="4" />
+    <define enum="SharpGen.Runtime.Win32.CommitFlags" underlying="System.Int32" sizeof="4" />
+    <define enum="SharpGen.Runtime.Win32.StorageStatisticsFlags" underlying="System.Int32" sizeof="4" />
+    <define enum="SharpGen.Runtime.ErrorCode" underlying="System.Int32" sizeof="4" />
+    <define struct="SharpGen.Runtime.Win32.StorageStatistics" sizeof="80" align="0" marshal="false" static-marshal="false" custom-new="false" />
+    <define interface="SharpGen.Runtime.IUnknown" native="SharpGen.Runtime.ComObject" shadow="SharpGen.Runtime.ComObjectShadow" vtbl="SharpGen.Runtime.ComObjectShadow.ComObjectVtbl" />
+    <define interface="SharpGen.Runtime.Win32.IStreamBase" native="SharpGen.Runtime.Win32.ComStreamBase" shadow="SharpGen.Runtime.Win32.IStreamBaseShadow" vtbl="SharpGen.Runtime.Win32.IStreamBaseShadow.IStreamBaseVtbl" />
+    <define interface="SharpGen.Runtime.Win32.IStream" native="SharpGen.Runtime.Win32.ComStream" shadow="SharpGen.Runtime.Win32.IStreamShadow" vtbl="SharpGen.Runtime.Win32.IStreamShadow.IStreamVtbl" />
+    <define enum="Vortice.Direct3D.DriverType" underlying="System.Int32" sizeof="4" />
+    <define enum="Vortice.Direct3D.FeatureLevel" underlying="System.Int32" sizeof="4" />
+    <define enum="Vortice.Direct3D.PrimitiveTopology" underlying="System.Int32" sizeof="4" />
+    <define enum="Vortice.Direct3D.InputPrimitive" underlying="System.Int32" sizeof="4" />
+    <define enum="Vortice.Direct3D.ShaderResourceViewDimension" underlying="System.Int32" sizeof="4" />
+    <define enum="Vortice.Direct3D.IncludeType" underlying="System.Int32" sizeof="4" />
+    <define enum="Vortice.Direct3D.ShaderVariableClass" underlying="System.Int32" sizeof="4" />
+    <define enum="Vortice.Direct3D.ShaderVariableFlags" underlying="System.Int32" sizeof="4" />
+    <define enum="Vortice.Direct3D.ShaderVariableType" underlying="System.Int32" sizeof="4" />
+    <define enum="Vortice.Direct3D.ShaderInputFlags" underlying="System.Int32" sizeof="4" />
+    <define enum="Vortice.Direct3D.ShaderInputType" underlying="System.Int32" sizeof="4" />
+    <define enum="Vortice.Direct3D.ConstantBufferFlags" underlying="System.Int32" sizeof="4" />
+    <define enum="Vortice.Direct3D.ConstantBufferType" underlying="System.Int32" sizeof="4" />
+    <define enum="Vortice.Direct3D.SystemValueType" underlying="System.Int32" sizeof="4" />
+    <define enum="Vortice.Direct3D.ResourceReturnType" underlying="System.Int32" sizeof="4" />
+    <define enum="Vortice.Direct3D.RegisterComponentType" underlying="System.Int32" sizeof="4" />
+    <define enum="Vortice.Direct3D.TessellatorDomain" underlying="System.Int32" sizeof="4" />
+    <define enum="Vortice.Direct3D.TessellatorPartitioning" underlying="System.Int32" sizeof="4" />
+    <define enum="Vortice.Direct3D.TessellatorOutputPrimitive" underlying="System.Int32" sizeof="4" />
+    <define enum="Vortice.Direct3D.MinPrecision" underlying="System.Int32" sizeof="4" />
+    <define enum="Vortice.Direct3D.InterpolationMode" underlying="System.Int32" sizeof="4" />
+    <define enum="Vortice.Direct3D.ParameterFlags" underlying="System.Int32" sizeof="4" />
+    <define enum="Vortice.DXCore.AdapterProperty" underlying="System.Int32" sizeof="4" />
+    <define enum="Vortice.DXCore.AdapterState" underlying="System.Int32" sizeof="4" />
+    <define enum="Vortice.DXCore.SegmentGroup" underlying="System.Int32" sizeof="4" />
+    <define enum="Vortice.DXCore.NotificationType" underlying="System.Int32" sizeof="4" />
+    <define enum="Vortice.DXCore.AdapterPreference" underlying="System.Int32" sizeof="4" />
+    <define struct="Vortice.Direct3D.ShaderMacro" sizeof="16" align="0" marshal="true" static-marshal="false" custom-new="false" />
+    <define struct="Vortice.DXCore.HardwareID" sizeof="16" align="0" marshal="false" static-marshal="false" custom-new="false" />
+    <define struct="Vortice.DXCore.HardwareIDParts" sizeof="20" align="0" marshal="false" static-marshal="false" custom-new="false" />
+    <define struct="Vortice.DXCore.AdapterMemoryBudgetNodeSegmentGroup" sizeof="8" align="0" marshal="false" static-marshal="false" custom-new="false" />
+    <define struct="Vortice.DXCore.AdapterMemoryBudget" sizeof="32" align="0" marshal="false" static-marshal="false" custom-new="false" />
+    <define interface="Vortice.Direct3D.Blob" shadow="Vortice.Direct3D.BlobShadow" vtbl="Vortice.Direct3D.BlobShadow.BlobVtbl" />
+    <define interface="Vortice.Direct3D.DestructionNotifier" shadow="Vortice.Direct3D.DestructionNotifierShadow" vtbl="Vortice.Direct3D.DestructionNotifierShadow.DestructionNotifierVtbl" />
+    <define interface="Vortice.Direct3D.Include" shadow="Vortice.Direct3D.IncludeShadow" vtbl="Vortice.Direct3D.IncludeShadow.IncludeVtbl" />
+    <define interface="Vortice.DXCore.IDXCoreAdapter" shadow="Vortice.DXCore.IDXCoreAdapterShadow" vtbl="Vortice.DXCore.IDXCoreAdapterShadow.IDXCoreAdapterVtbl" />
+    <define interface="Vortice.DXCore.IDXCoreAdapterList" shadow="Vortice.DXCore.IDXCoreAdapterListShadow" vtbl="Vortice.DXCore.IDXCoreAdapterListShadow.IDXCoreAdapterListVtbl" />
+    <define interface="Vortice.DXCore.IDXCoreAdapterFactory" shadow="Vortice.DXCore.IDXCoreAdapterFactoryShadow" vtbl="Vortice.DXCore.IDXCoreAdapterFactoryShadow.IDXCoreAdapterFactoryVtbl" />
+    <define enum="System.IO.SeekOrigin" underlying="System.UInt32" sizeof="4" />
+    <define struct="SharpGen.Runtime.Win32.RawBool" sizeof="4" />
+    <define interface="SharpGen.Runtime.ComObject" />
+    <define interface="SharpGen.Runtime.Win32.PropertyBag" />
+    <define struct="SharpGen.Runtime.Win32.SecurityAttributes" sizeof="16" />
+    <define struct="SharpGen.Runtime.Win32.NativeMessage" sizeof="28" />
+    <define struct="SharpGen.Runtime.Win32.Variant" sizeof="16" />
+    <define struct="SharpGen.Runtime.Win32.BitmapInfoHeader" sizeof="40" />
+    <define struct="SharpGen.Runtime.Result" sizeof="4" />
+    <define struct="SharpGen.Runtime.FunctionCallback" sizeof="8" />
+    <define struct="SharpGen.Runtime.PointerSize" sizeof="8" />
+    <define enum="System.IO.SeekOrigin" underlying="System.UInt32" sizeof="4" />
+    <define struct="SharpGen.Runtime.Win32.RawBool" sizeof="4" align="0" marshal="false" static-marshal="false" custom-new="false" />
+    <define struct="SharpGen.Runtime.Result" sizeof="4" align="0" marshal="false" static-marshal="false" custom-new="false" />
+    <define struct="SharpGen.Runtime.PointerSize" sizeof="8" align="0" marshal="false" static-marshal="false" custom-new="false" />
+    <define struct="SharpGen.Runtime.PointerSize" sizeof="8" align="0" marshal="false" static-marshal="false" custom-new="false" />
+    <define struct="SharpGen.Runtime.Win32.NativeMessage" sizeof="28" align="0" marshal="false" static-marshal="false" custom-new="false" />
+    <define struct="SharpGen.Runtime.Win32.SecurityAttributes" sizeof="16" align="0" marshal="false" static-marshal="false" custom-new="false" />
+    <define struct="SharpGen.Runtime.Win32.Variant" sizeof="16" align="0" marshal="false" static-marshal="false" custom-new="false" />
+    <define struct="SharpGen.Runtime.Win32.Variant" sizeof="16" align="0" marshal="false" static-marshal="false" custom-new="false" />
+    <define interface="SharpGen.Runtime.ComObject" shadow="SharpGen.Runtime.ComObjectShadow" vtbl="SharpGen.Runtime.ComObjectShadow.SharpGen.Runtime.ComObjectVtbl" />
+    <define interface="SharpGen.Runtime.ComObject" shadow="SharpGen.Runtime.ComObjectShadow" vtbl="SharpGen.Runtime.ComObjectShadow.SharpGen.Runtime.ComObjectVtbl" />
+    <define interface="SharpGen.Runtime.ComObject" shadow="SharpGen.Runtime.ComObjectShadow" vtbl="SharpGen.Runtime.ComObjectShadow.SharpGen.Runtime.ComObjectVtbl" />
+    <define interface="SharpGen.Runtime.ComObject" shadow="SharpGen.Runtime.ComObjectShadow" vtbl="SharpGen.Runtime.ComObjectShadow.SharpGen.Runtime.ComObjectVtbl" />
+    <define interface="SharpGen.Runtime.ComObject" shadow="SharpGen.Runtime.ComObjectShadow" vtbl="SharpGen.Runtime.ComObjectShadow.SharpGen.Runtime.ComObjectVtbl" />
+    <define interface="SharpGen.Runtime.ComObject" shadow="SharpGen.Runtime.ComObjectShadow" vtbl="SharpGen.Runtime.ComObjectShadow.SharpGen.Runtime.ComObjectVtbl" />
+    <define interface="SharpGen.Runtime.ComObject" shadow="SharpGen.Runtime.ComObjectShadow" vtbl="SharpGen.Runtime.ComObjectShadow.SharpGen.Runtime.ComObjectVtbl" />
+    <define interface="SharpGen.Runtime.ComObject" shadow="SharpGen.Runtime.ComObjectShadow" vtbl="SharpGen.Runtime.ComObjectShadow.SharpGen.Runtime.ComObjectVtbl" />
+    <define interface="SharpGen.Runtime.Win32.PropertyBag" shadow="SharpGen.Runtime.Win32.PropertyBagShadow" vtbl="SharpGen.Runtime.Win32.PropertyBagShadow.SharpGen.Runtime.Win32.PropertyBagVtbl" />
+    <define interface="SharpGen.Runtime.ComObject" shadow="SharpGen.Runtime.ComObjectShadow" vtbl="SharpGen.Runtime.ComObjectShadow.SharpGen.Runtime.ComObjectVtbl" />
+    <define interface="SharpGen.Runtime.ComObject" shadow="SharpGen.Runtime.ComObjectShadow" vtbl="SharpGen.Runtime.ComObjectShadow.SharpGen.Runtime.ComObjectVtbl" />
+    <define interface="SharpGen.Runtime.ComObject" shadow="SharpGen.Runtime.ComObjectShadow" vtbl="SharpGen.Runtime.ComObjectShadow.SharpGen.Runtime.ComObjectVtbl" />
+    <define struct="SharpGen.Runtime.PointerSize" sizeof="8" align="0" marshal="false" static-marshal="false" custom-new="false" />
+    <define struct="SharpGen.Runtime.PointerSize" sizeof="8" align="0" marshal="false" static-marshal="false" custom-new="false" />
+    <define struct="SharpGen.Runtime.FunctionCallback" sizeof="8" align="0" marshal="false" static-marshal="false" custom-new="false" />
+    <define enum="SharpGen.Runtime.Win32.LockType" underlying="System.Int32" sizeof="4" />
+    <define enum="SharpGen.Runtime.Win32.CommitFlags" underlying="System.Int32" sizeof="4" />
+    <define enum="SharpGen.Runtime.Win32.StorageStatisticsFlags" underlying="System.Int32" sizeof="4" />
+    <define enum="SharpGen.Runtime.ErrorCode" underlying="System.Int32" sizeof="4" />
+    <define struct="SharpGen.Runtime.Win32.StorageStatistics" sizeof="80" align="0" marshal="false" static-marshal="false" custom-new="false" />
+    <define interface="SharpGen.Runtime.IUnknown" native="SharpGen.Runtime.ComObject" shadow="SharpGen.Runtime.ComObjectShadow" vtbl="SharpGen.Runtime.ComObjectShadow.ComObjectVtbl" />
+    <define interface="SharpGen.Runtime.Win32.IStreamBase" native="SharpGen.Runtime.Win32.ComStreamBase" shadow="SharpGen.Runtime.Win32.IStreamBaseShadow" vtbl="SharpGen.Runtime.Win32.IStreamBaseShadow.IStreamBaseVtbl" />
+    <define interface="SharpGen.Runtime.Win32.IStream" native="SharpGen.Runtime.Win32.ComStream" shadow="SharpGen.Runtime.Win32.IStreamShadow" vtbl="SharpGen.Runtime.Win32.IStreamShadow.IStreamVtbl" />
+    <define struct="Vortice.Mathematics.Color3" sizeof="12" align="0" marshal="false" static-marshal="false" custom-new="false" />
+    <define struct="Vortice.Mathematics.Color4" sizeof="16" align="0" marshal="false" static-marshal="false" custom-new="false" />
+    <define struct="System.Numerics.Matrix3x2" sizeof="24" align="0" marshal="false" static-marshal="false" custom-new="false" />
+    <define struct="Vortice.Mathematics.Point" sizeof="8" align="0" marshal="false" static-marshal="false" custom-new="false" />
+    <define struct="Vortice.Mathematics.Size" sizeof="8" align="0" marshal="false" static-marshal="false" custom-new="false" />
+    <define struct="Vortice.RawRect" sizeof="16" align="0" marshal="false" static-marshal="false" custom-new="false" />
+    <define struct="Vortice.Mathematics.Color4" sizeof="16" align="0" marshal="false" static-marshal="false" custom-new="false" />
+    <define struct="SharpGen.Runtime.PointerSize" sizeof="8" align="0" marshal="false" static-marshal="false" custom-new="false" />
+    <define struct="SharpGen.Runtime.PointerSize" sizeof="8" align="0" marshal="false" static-marshal="false" custom-new="false" />
+    <define struct="SharpGen.Runtime.FunctionCallback" sizeof="8" align="0" marshal="false" static-marshal="false" custom-new="false" />
+    <define enum="System.IO.SeekOrigin" underlying="System.UInt32" sizeof="4" />
+    <define struct="SharpGen.Runtime.Win32.RawBool" sizeof="4" align="0" marshal="false" static-marshal="false" custom-new="false" />
+    <define struct="SharpGen.Runtime.Result" sizeof="4" align="0" marshal="false" static-marshal="false" custom-new="false" />
+    <define struct="SharpGen.Runtime.PointerSize" sizeof="8" align="0" marshal="false" static-marshal="false" custom-new="false" />
+    <define struct="SharpGen.Runtime.PointerSize" sizeof="8" align="0" marshal="false" static-marshal="false" custom-new="false" />
+    <define struct="SharpGen.Runtime.Win32.NativeMessage" sizeof="28" align="0" marshal="false" static-marshal="false" custom-new="false" />
+    <define struct="SharpGen.Runtime.Win32.SecurityAttributes" sizeof="16" align="0" marshal="false" static-marshal="false" custom-new="false" />
+    <define struct="SharpGen.Runtime.Win32.Variant" sizeof="16" align="0" marshal="false" static-marshal="false" custom-new="false" />
+    <define struct="SharpGen.Runtime.Win32.Variant" sizeof="16" align="0" marshal="false" static-marshal="false" custom-new="false" />
+    <define interface="SharpGen.Runtime.ComObject" shadow="SharpGen.Runtime.ComObjectShadow" vtbl="SharpGen.Runtime.ComObjectShadow.SharpGen.Runtime.ComObjectVtbl" />
+    <define interface="SharpGen.Runtime.ComObject" shadow="SharpGen.Runtime.ComObjectShadow" vtbl="SharpGen.Runtime.ComObjectShadow.SharpGen.Runtime.ComObjectVtbl" />
+    <define interface="SharpGen.Runtime.ComObject" shadow="SharpGen.Runtime.ComObjectShadow" vtbl="SharpGen.Runtime.ComObjectShadow.SharpGen.Runtime.ComObjectVtbl" />
+    <define interface="SharpGen.Runtime.ComObject" shadow="SharpGen.Runtime.ComObjectShadow" vtbl="SharpGen.Runtime.ComObjectShadow.SharpGen.Runtime.ComObjectVtbl" />
+    <define interface="SharpGen.Runtime.ComObject" shadow="SharpGen.Runtime.ComObjectShadow" vtbl="SharpGen.Runtime.ComObjectShadow.SharpGen.Runtime.ComObjectVtbl" />
+    <define interface="SharpGen.Runtime.ComObject" shadow="SharpGen.Runtime.ComObjectShadow" vtbl="SharpGen.Runtime.ComObjectShadow.SharpGen.Runtime.ComObjectVtbl" />
+    <define interface="SharpGen.Runtime.ComObject" shadow="SharpGen.Runtime.ComObjectShadow" vtbl="SharpGen.Runtime.ComObjectShadow.SharpGen.Runtime.ComObjectVtbl" />
+    <define interface="SharpGen.Runtime.ComObject" shadow="SharpGen.Runtime.ComObjectShadow" vtbl="SharpGen.Runtime.ComObjectShadow.SharpGen.Runtime.ComObjectVtbl" />
+    <define interface="SharpGen.Runtime.Win32.PropertyBag" shadow="SharpGen.Runtime.Win32.PropertyBagShadow" vtbl="SharpGen.Runtime.Win32.PropertyBagShadow.SharpGen.Runtime.Win32.PropertyBagVtbl" />
+    <define interface="SharpGen.Runtime.ComObject" shadow="SharpGen.Runtime.ComObjectShadow" vtbl="SharpGen.Runtime.ComObjectShadow.SharpGen.Runtime.ComObjectVtbl" />
+    <define interface="SharpGen.Runtime.ComObject" shadow="SharpGen.Runtime.ComObjectShadow" vtbl="SharpGen.Runtime.ComObjectShadow.SharpGen.Runtime.ComObjectVtbl" />
+    <define interface="SharpGen.Runtime.ComObject" shadow="SharpGen.Runtime.ComObjectShadow" vtbl="SharpGen.Runtime.ComObjectShadow.SharpGen.Runtime.ComObjectVtbl" />
+    <define enum="SharpGen.Runtime.Win32.LockType" underlying="System.Int32" sizeof="4" />
+    <define enum="SharpGen.Runtime.Win32.CommitFlags" underlying="System.Int32" sizeof="4" />
+    <define enum="SharpGen.Runtime.Win32.StorageStatisticsFlags" underlying="System.Int32" sizeof="4" />
+    <define enum="SharpGen.Runtime.ErrorCode" underlying="System.Int32" sizeof="4" />
+    <define struct="SharpGen.Runtime.Win32.StorageStatistics" sizeof="80" align="0" marshal="false" static-marshal="false" custom-new="false" />
+    <define interface="SharpGen.Runtime.IUnknown" native="SharpGen.Runtime.ComObject" shadow="SharpGen.Runtime.ComObjectShadow" vtbl="SharpGen.Runtime.ComObjectShadow.ComObjectVtbl" />
+    <define interface="SharpGen.Runtime.Win32.IStreamBase" native="SharpGen.Runtime.Win32.ComStreamBase" shadow="SharpGen.Runtime.Win32.IStreamBaseShadow" vtbl="SharpGen.Runtime.Win32.IStreamBaseShadow.IStreamBaseVtbl" />
+    <define interface="SharpGen.Runtime.Win32.IStream" native="SharpGen.Runtime.Win32.ComStream" shadow="SharpGen.Runtime.Win32.IStreamShadow" vtbl="SharpGen.Runtime.Win32.IStreamShadow.IStreamVtbl" />
+    <define enum="Vortice.Direct3D.DriverType" underlying="System.Int32" sizeof="4" />
+    <define enum="Vortice.Direct3D.FeatureLevel" underlying="System.Int32" sizeof="4" />
+    <define enum="Vortice.Direct3D.PrimitiveTopology" underlying="System.Int32" sizeof="4" />
+    <define enum="Vortice.Direct3D.InputPrimitive" underlying="System.Int32" sizeof="4" />
+    <define enum="Vortice.Direct3D.ShaderResourceViewDimension" underlying="System.Int32" sizeof="4" />
+    <define enum="Vortice.Direct3D.IncludeType" underlying="System.Int32" sizeof="4" />
+    <define enum="Vortice.Direct3D.ShaderVariableClass" underlying="System.Int32" sizeof="4" />
+    <define enum="Vortice.Direct3D.ShaderVariableFlags" underlying="System.Int32" sizeof="4" />
+    <define enum="Vortice.Direct3D.ShaderVariableType" underlying="System.Int32" sizeof="4" />
+    <define enum="Vortice.Direct3D.ShaderInputFlags" underlying="System.Int32" sizeof="4" />
+    <define enum="Vortice.Direct3D.ShaderInputType" underlying="System.Int32" sizeof="4" />
+    <define enum="Vortice.Direct3D.ConstantBufferFlags" underlying="System.Int32" sizeof="4" />
+    <define enum="Vortice.Direct3D.ConstantBufferType" underlying="System.Int32" sizeof="4" />
+    <define enum="Vortice.Direct3D.SystemValueType" underlying="System.Int32" sizeof="4" />
+    <define enum="Vortice.Direct3D.ResourceReturnType" underlying="System.Int32" sizeof="4" />
+    <define enum="Vortice.Direct3D.RegisterComponentType" underlying="System.Int32" sizeof="4" />
+    <define enum="Vortice.Direct3D.TessellatorDomain" underlying="System.Int32" sizeof="4" />
+    <define enum="Vortice.Direct3D.TessellatorPartitioning" underlying="System.Int32" sizeof="4" />
+    <define enum="Vortice.Direct3D.TessellatorOutputPrimitive" underlying="System.Int32" sizeof="4" />
+    <define enum="Vortice.Direct3D.MinPrecision" underlying="System.Int32" sizeof="4" />
+    <define enum="Vortice.Direct3D.InterpolationMode" underlying="System.Int32" sizeof="4" />
+    <define enum="Vortice.Direct3D.ParameterFlags" underlying="System.Int32" sizeof="4" />
+    <define enum="Vortice.DXCore.AdapterProperty" underlying="System.Int32" sizeof="4" />
+    <define enum="Vortice.DXCore.AdapterState" underlying="System.Int32" sizeof="4" />
+    <define enum="Vortice.DXCore.SegmentGroup" underlying="System.Int32" sizeof="4" />
+    <define enum="Vortice.DXCore.NotificationType" underlying="System.Int32" sizeof="4" />
+    <define enum="Vortice.DXCore.AdapterPreference" underlying="System.Int32" sizeof="4" />
+    <define struct="Vortice.Direct3D.ShaderMacro" sizeof="16" align="0" marshal="false" static-marshal="false" custom-new="false" />
+    <define struct="Vortice.DXCore.HardwareID" sizeof="16" align="0" marshal="false" static-marshal="false" custom-new="false" />
+    <define struct="Vortice.DXCore.HardwareIDParts" sizeof="20" align="0" marshal="false" static-marshal="false" custom-new="false" />
+    <define struct="Vortice.DXCore.AdapterMemoryBudgetNodeSegmentGroup" sizeof="8" align="0" marshal="false" static-marshal="false" custom-new="false" />
+    <define struct="Vortice.DXCore.AdapterMemoryBudget" sizeof="32" align="0" marshal="false" static-marshal="false" custom-new="false" />
+    <define interface="Vortice.Direct3D.Blob" shadow="Vortice.Direct3D.BlobShadow" vtbl="Vortice.Direct3D.BlobShadow.BlobVtbl" />
+    <define interface="Vortice.Direct3D.DestructionNotifier" shadow="Vortice.Direct3D.DestructionNotifierShadow" vtbl="Vortice.Direct3D.DestructionNotifierShadow.DestructionNotifierVtbl" />
+    <define interface="Vortice.Direct3D.Include" shadow="Vortice.Direct3D.IncludeShadow" vtbl="Vortice.Direct3D.IncludeShadow.IncludeVtbl" />
+    <define interface="Vortice.DXCore.IDXCoreAdapter" shadow="Vortice.DXCore.IDXCoreAdapterShadow" vtbl="Vortice.DXCore.IDXCoreAdapterShadow.IDXCoreAdapterVtbl" />
+    <define interface="Vortice.DXCore.IDXCoreAdapterList" shadow="Vortice.DXCore.IDXCoreAdapterListShadow" vtbl="Vortice.DXCore.IDXCoreAdapterListShadow.IDXCoreAdapterListVtbl" />
+    <define interface="Vortice.DXCore.IDXCoreAdapterFactory" shadow="Vortice.DXCore.IDXCoreAdapterFactoryShadow" vtbl="Vortice.DXCore.IDXCoreAdapterFactoryShadow.IDXCoreAdapterFactoryVtbl" />
+    <define enum="Vortice.DXGI.Format" underlying="System.Int32" sizeof="4" />
+    <define enum="Vortice.DXGI.ReportLiveObjectFlags" underlying="System.Int32" sizeof="4" />
+    <define enum="Vortice.DXGI.InfoQueueMessageCategory" underlying="System.Int32" sizeof="4" />
+    <define enum="Vortice.DXGI.InfoQueueMessageSeverity" underlying="System.Int32" sizeof="4" />
+    <define enum="Vortice.DXGI.ModeScanlineOrder" underlying="System.Int32" sizeof="4" />
+    <define enum="Vortice.DXGI.ModeScaling" underlying="System.Int32" sizeof="4" />
+    <define enum="Vortice.DXGI.ModeRotation" underlying="System.Int32" sizeof="4" />
+    <define enum="Vortice.DXGI.ColorSpaceType" underlying="System.Int32" sizeof="4" />
+    <define enum="Vortice.DXGI.Residency" underlying="System.Int32" sizeof="4" />
+    <define enum="Vortice.DXGI.SwapEffect" underlying="System.Int32" sizeof="4" />
+    <define enum="Vortice.DXGI.SwapChainFlags" underlying="System.Int32" sizeof="4" />
+    <define enum="Vortice.DXGI.AdapterFlags" underlying="System.Int32" sizeof="4" />
+    <define enum="Vortice.DXGI.PointerShapeType" underlying="System.Int32" sizeof="4" />
+    <define enum="Vortice.DXGI.AlphaMode" underlying="System.Int32" sizeof="4" />
+    <define enum="Vortice.DXGI.OfferResourcePriority" underlying="System.Int32" sizeof="4" />
+    <define enum="Vortice.DXGI.Scaling" underlying="System.Int32" sizeof="4" />
+    <define enum="Vortice.DXGI.GraphicsPreemptionGranularity" underlying="System.Int32" sizeof="4" />
+    <define enum="Vortice.DXGI.ComputePreemptionGranularity" underlying="System.Int32" sizeof="4" />
+    <define enum="Vortice.DXGI.MultiplaneOverlayYCbCrFlags" underlying="System.Int32" sizeof="4" />
+    <define enum="Vortice.DXGI.FramePresentationMode" underlying="System.Int32" sizeof="4" />
+    <define enum="Vortice.DXGI.OverlaySupportFlags" underlying="System.Int32" sizeof="4" />
+    <define enum="Vortice.DXGI.SwapChainColorSpaceSupportFlags" underlying="System.Int32" sizeof="4" />
+    <define enum="Vortice.DXGI.OverlayColorSpaceSupportFlags" underlying="System.Int32" sizeof="4" />
+    <define enum="Vortice.DXGI.MemorySegmentGroup" underlying="System.Int32" sizeof="4" />
+    <define enum="Vortice.DXGI.OutduplFlag" underlying="System.Int32" sizeof="4" />
+    <define enum="Vortice.DXGI.HdrMetadataType" underlying="System.Int32" sizeof="4" />
+    <define enum="Vortice.DXGI.OfferResourceFlags" underlying="System.Int32" sizeof="4" />
+    <define enum="Vortice.DXGI.ReclaimResourceResults" underlying="System.Int32" sizeof="4" />
+    <define enum="Vortice.DXGI.Feature" underlying="System.Int32" sizeof="4" />
+    <define enum="Vortice.DXGI.AdapterFlags3" underlying="System.Int32" sizeof="4" />
+    <define enum="Vortice.DXGI.HardwareCompositionSupportFlags" underlying="System.Int32" sizeof="4" />
+    <define enum="Vortice.DXGI.GpuPreference" underlying="System.Int32" sizeof="4" />
+    <define enum="Vortice.DXGI.PresentFlags" underlying="System.Int32" sizeof="4" />
+    <define enum="Vortice.DXGI.Usage" underlying="System.Int32" sizeof="4" />
+    <define enum="Vortice.DXGI.ResourcePriority" underlying="System.Int32" sizeof="4" />
+    <define enum="Vortice.DXGI.MapFlags" underlying="System.Int32" sizeof="4" />
+    <define enum="Vortice.DXGI.DisplayModeEnumerationFlags" underlying="System.Int32" sizeof="4" />
+    <define enum="Vortice.DXGI.WindowAssociationFlags" underlying="System.Int32" sizeof="4" />
+    <define enum="Vortice.DXGI.SharedResourceFlags" underlying="System.Int32" sizeof="4" />
+    <define struct="Vortice.DXGI.InfoQueueMessage" sizeof="44" align="0" marshal="false" static-marshal="false" custom-new="false" />
+    <define struct="Vortice.DXGI.InfoQueueFilterDescription" sizeof="0" align="0" marshal="true" static-marshal="false" custom-new="false" />
+    <define struct="Vortice.DXGI.InfoQueueFilter" sizeof="0" align="0" marshal="true" static-marshal="false" custom-new="false" />
+    <define struct="Vortice.DXGI.GammaControl" sizeof="12324" align="0" marshal="false" static-marshal="false" custom-new="false" />
+    <define struct="Vortice.DXGI.GammaControlCapabilities" sizeof="4116" align="0" marshal="false" static-marshal="false" custom-new="false" />
+    <define struct="Vortice.DXGI.ModeDescription" sizeof="28" align="0" marshal="false" static-marshal="false" custom-new="false" />
+    <define struct="Vortice.DXGI.JpegDcHuffmanTable" sizeof="24" align="0" marshal="false" static-marshal="false" custom-new="false" />
+    <define struct="Vortice.DXGI.JpegAcHuffmanTable" sizeof="178" align="0" marshal="false" static-marshal="false" custom-new="false" />
+    <define struct="Vortice.DXGI.JpegQuantizationTable" sizeof="64" align="0" marshal="false" static-marshal="false" custom-new="false" />
+    <define struct="Vortice.DXGI.Rational" sizeof="8" align="0" marshal="false" static-marshal="false" custom-new="false" />
+    <define struct="Vortice.DXGI.SampleDescription" sizeof="8" align="0" marshal="false" static-marshal="false" custom-new="false" />
+    <define struct="Vortice.DXGI.FrameStatistics" sizeof="32" align="0" marshal="false" static-marshal="false" custom-new="false" />
+    <define struct="Vortice.DXGI.MappedRect" sizeof="12" align="0" marshal="false" static-marshal="false" custom-new="false" />
+    <define struct="Vortice.DXGI.AdapterDescription" sizeof="176" align="0" marshal="false" static-marshal="false" custom-new="false" />
+    <define struct="Vortice.DXGI.OutputDescription" sizeof="64" align="0" marshal="false" static-marshal="false" custom-new="false" />
+    <define struct="Vortice.DXGI.SharedResource" sizeof="8" align="0" marshal="false" static-marshal="false" custom-new="false" />
+    <define struct="Vortice.DXGI.SurfaceDescription" sizeof="20" align="0" marshal="false" static-marshal="false" custom-new="false" />
+    <define struct="Vortice.DXGI.SwapChainDescription" sizeof="64" align="0" marshal="false" static-marshal="false" custom-new="false" />
+    <define struct="Vortice.DXGI.AdapterDescription1" sizeof="180" align="4" marshal="false" static-marshal="false" custom-new="false" />
+    <define struct="Vortice.DXGI.DisplayColorSpace" sizeof="8" align="0" marshal="false" static-marshal="false" custom-new="false" />
+    <define struct="Vortice.DXGI.OutduplMoveRect" sizeof="24" align="0" marshal="false" static-marshal="false" custom-new="false" />
+    <define struct="Vortice.DXGI.OutduplDescription" sizeof="36" align="0" marshal="false" static-marshal="false" custom-new="false" />
+    <define struct="Vortice.DXGI.OutduplPointerPosition" sizeof="12" align="0" marshal="false" static-marshal="false" custom-new="false" />
+    <define struct="Vortice.DXGI.OutduplPointerShapeInfo" sizeof="24" align="0" marshal="false" static-marshal="false" custom-new="false" />
+    <define struct="Vortice.DXGI.OutduplFrameInfo" sizeof="48" align="0" marshal="false" static-marshal="false" custom-new="false" />
+    <define struct="Vortice.DXGI.ModeDescription1" sizeof="32" align="0" marshal="false" static-marshal="false" custom-new="false" />
+    <define struct="Vortice.DXGI.SwapChainDescription1" sizeof="48" align="0" marshal="false" static-marshal="false" custom-new="false" />
+    <define struct="Vortice.DXGI.SwapChainFullscreenDescription" sizeof="20" align="0" marshal="false" static-marshal="false" custom-new="false" />
+    <define struct="Vortice.DXGI.PresentParameters" sizeof="28" align="0" marshal="true" static-marshal="false" custom-new="false" />
+    <define struct="Vortice.DXGI.AdapterDescription2" sizeof="188" align="4" marshal="false" static-marshal="false" custom-new="false" />
+    <define struct="Vortice.DXGI.DecodeSwapChainDescription" sizeof="4" align="0" marshal="false" static-marshal="false" custom-new="false" />
+    <define struct="Vortice.DXGI.FrameStatisticsMedia" sizeof="40" align="0" marshal="false" static-marshal="false" custom-new="false" />
+    <define struct="Vortice.DXGI.QueryVideoMemoryInfo" sizeof="32" align="0" marshal="false" static-marshal="false" custom-new="false" />
+    <define struct="Vortice.DXGI.HdrMetadataHdr10" sizeof="28" align="0" marshal="false" static-marshal="false" custom-new="false" />
+    <define struct="Vortice.DXGI.HdrMetadataHdr10plus" sizeof="72" align="0" marshal="false" static-marshal="false" custom-new="false" />
+    <define struct="Vortice.DXGI.AdapterDescription3" sizeof="188" align="4" marshal="false" static-marshal="false" custom-new="false" />
+    <define struct="Vortice.DXGI.OutputDescription1" sizeof="116" align="0" marshal="false" static-marshal="false" custom-new="false" />
+    <define interface="Vortice.DXGI.IDXGIInfoQueue" shadow="Vortice.DXGI.IDXGIInfoQueueShadow" vtbl="Vortice.DXGI.IDXGIInfoQueueShadow.IDXGIInfoQueueVtbl" />
+    <define interface="Vortice.DXGI.IDXGIDebug" shadow="Vortice.DXGI.IDXGIDebugShadow" vtbl="Vortice.DXGI.IDXGIDebugShadow.IDXGIDebugVtbl" />
+    <define interface="Vortice.DXGI.IDXGIDebug1" shadow="Vortice.DXGI.IDXGIDebug1Shadow" vtbl="Vortice.DXGI.IDXGIDebug1Shadow.IDXGIDebug1Vtbl" />
+    <define interface="Vortice.DXGI.IDXGIObject" shadow="Vortice.DXGI.IDXGIObjectShadow" vtbl="Vortice.DXGI.IDXGIObjectShadow.IDXGIObjectVtbl" />
+    <define interface="Vortice.DXGI.IDXGIDeviceSubObject" shadow="Vortice.DXGI.IDXGIDeviceSubObjectShadow" vtbl="Vortice.DXGI.IDXGIDeviceSubObjectShadow.IDXGIDeviceSubObjectVtbl" />
+    <define interface="Vortice.DXGI.IDXGIResource" shadow="Vortice.DXGI.IDXGIResourceShadow" vtbl="Vortice.DXGI.IDXGIResourceShadow.IDXGIResourceVtbl" />
+    <define interface="Vortice.DXGI.IDXGIKeyedMutex" shadow="Vortice.DXGI.IDXGIKeyedMutexShadow" vtbl="Vortice.DXGI.IDXGIKeyedMutexShadow.IDXGIKeyedMutexVtbl" />
+    <define interface="Vortice.DXGI.IDXGISurface" shadow="Vortice.DXGI.IDXGISurfaceShadow" vtbl="Vortice.DXGI.IDXGISurfaceShadow.IDXGISurfaceVtbl" />
+    <define interface="Vortice.DXGI.IDXGISurface1" shadow="Vortice.DXGI.IDXGISurface1Shadow" vtbl="Vortice.DXGI.IDXGISurface1Shadow.IDXGISurface1Vtbl" />
+    <define interface="Vortice.DXGI.IDXGIAdapter" shadow="Vortice.DXGI.IDXGIAdapterShadow" vtbl="Vortice.DXGI.IDXGIAdapterShadow.IDXGIAdapterVtbl" />
+    <define interface="Vortice.DXGI.IDXGIOutput" shadow="Vortice.DXGI.IDXGIOutputShadow" vtbl="Vortice.DXGI.IDXGIOutputShadow.IDXGIOutputVtbl" />
+    <define interface="Vortice.DXGI.IDXGISwapChain" shadow="Vortice.DXGI.IDXGISwapChainShadow" vtbl="Vortice.DXGI.IDXGISwapChainShadow.IDXGISwapChainVtbl" />
+    <define interface="Vortice.DXGI.IDXGIFactory" shadow="Vortice.DXGI.IDXGIFactoryShadow" vtbl="Vortice.DXGI.IDXGIFactoryShadow.IDXGIFactoryVtbl" />
+    <define interface="Vortice.DXGI.IDXGIDevice" shadow="Vortice.DXGI.IDXGIDeviceShadow" vtbl="Vortice.DXGI.IDXGIDeviceShadow.IDXGIDeviceVtbl" />
+    <define interface="Vortice.DXGI.IDXGIFactory1" shadow="Vortice.DXGI.IDXGIFactory1Shadow" vtbl="Vortice.DXGI.IDXGIFactory1Shadow.IDXGIFactory1Vtbl" />
+    <define interface="Vortice.DXGI.IDXGIAdapter1" shadow="Vortice.DXGI.IDXGIAdapter1Shadow" vtbl="Vortice.DXGI.IDXGIAdapter1Shadow.IDXGIAdapter1Vtbl" />
+    <define interface="Vortice.DXGI.IDXGIDevice1" shadow="Vortice.DXGI.IDXGIDevice1Shadow" vtbl="Vortice.DXGI.IDXGIDevice1Shadow.IDXGIDevice1Vtbl" />
+    <define interface="Vortice.DXGI.IDXGIDisplayControl" shadow="Vortice.DXGI.IDXGIDisplayControlShadow" vtbl="Vortice.DXGI.IDXGIDisplayControlShadow.IDXGIDisplayControlVtbl" />
+    <define interface="Vortice.DXGI.IDXGIOutputDuplication" shadow="Vortice.DXGI.IDXGIOutputDuplicationShadow" vtbl="Vortice.DXGI.IDXGIOutputDuplicationShadow.IDXGIOutputDuplicationVtbl" />
+    <define interface="Vortice.DXGI.IDXGISurface2" shadow="Vortice.DXGI.IDXGISurface2Shadow" vtbl="Vortice.DXGI.IDXGISurface2Shadow.IDXGISurface2Vtbl" />
+    <define interface="Vortice.DXGI.IDXGIResource1" shadow="Vortice.DXGI.IDXGIResource1Shadow" vtbl="Vortice.DXGI.IDXGIResource1Shadow.IDXGIResource1Vtbl" />
+    <define interface="Vortice.DXGI.IDXGIDevice2" shadow="Vortice.DXGI.IDXGIDevice2Shadow" vtbl="Vortice.DXGI.IDXGIDevice2Shadow.IDXGIDevice2Vtbl" />
+    <define interface="Vortice.DXGI.IDXGISwapChain1" shadow="Vortice.DXGI.IDXGISwapChain1Shadow" vtbl="Vortice.DXGI.IDXGISwapChain1Shadow.IDXGISwapChain1Vtbl" />
+    <define interface="Vortice.DXGI.IDXGIFactory2" shadow="Vortice.DXGI.IDXGIFactory2Shadow" vtbl="Vortice.DXGI.IDXGIFactory2Shadow.IDXGIFactory2Vtbl" />
+    <define interface="Vortice.DXGI.IDXGIAdapter2" shadow="Vortice.DXGI.IDXGIAdapter2Shadow" vtbl="Vortice.DXGI.IDXGIAdapter2Shadow.IDXGIAdapter2Vtbl" />
+    <define interface="Vortice.DXGI.IDXGIOutput1" shadow="Vortice.DXGI.IDXGIOutput1Shadow" vtbl="Vortice.DXGI.IDXGIOutput1Shadow.IDXGIOutput1Vtbl" />
+    <define interface="Vortice.DXGI.IDXGIDevice3" shadow="Vortice.DXGI.IDXGIDevice3Shadow" vtbl="Vortice.DXGI.IDXGIDevice3Shadow.IDXGIDevice3Vtbl" />
+    <define interface="Vortice.DXGI.IDXGISwapChain2" shadow="Vortice.DXGI.IDXGISwapChain2Shadow" vtbl="Vortice.DXGI.IDXGISwapChain2Shadow.IDXGISwapChain2Vtbl" />
+    <define interface="Vortice.DXGI.IDXGIOutput2" shadow="Vortice.DXGI.IDXGIOutput2Shadow" vtbl="Vortice.DXGI.IDXGIOutput2Shadow.IDXGIOutput2Vtbl" />
+    <define interface="Vortice.DXGI.IDXGIFactory3" shadow="Vortice.DXGI.IDXGIFactory3Shadow" vtbl="Vortice.DXGI.IDXGIFactory3Shadow.IDXGIFactory3Vtbl" />
+    <define interface="Vortice.DXGI.IDXGIDecodeSwapChain" shadow="Vortice.DXGI.IDXGIDecodeSwapChainShadow" vtbl="Vortice.DXGI.IDXGIDecodeSwapChainShadow.IDXGIDecodeSwapChainVtbl" />
+    <define interface="Vortice.DXGI.IDXGIFactoryMedia" shadow="Vortice.DXGI.IDXGIFactoryMediaShadow" vtbl="Vortice.DXGI.IDXGIFactoryMediaShadow.IDXGIFactoryMediaVtbl" />
+    <define interface="Vortice.DXGI.IDXGISwapChainMedia" shadow="Vortice.DXGI.IDXGISwapChainMediaShadow" vtbl="Vortice.DXGI.IDXGISwapChainMediaShadow.IDXGISwapChainMediaVtbl" />
+    <define interface="Vortice.DXGI.IDXGIOutput3" shadow="Vortice.DXGI.IDXGIOutput3Shadow" vtbl="Vortice.DXGI.IDXGIOutput3Shadow.IDXGIOutput3Vtbl" />
+    <define interface="Vortice.DXGI.IDXGISwapChain3" shadow="Vortice.DXGI.IDXGISwapChain3Shadow" vtbl="Vortice.DXGI.IDXGISwapChain3Shadow.IDXGISwapChain3Vtbl" />
+    <define interface="Vortice.DXGI.IDXGIOutput4" shadow="Vortice.DXGI.IDXGIOutput4Shadow" vtbl="Vortice.DXGI.IDXGIOutput4Shadow.IDXGIOutput4Vtbl" />
+    <define interface="Vortice.DXGI.IDXGIFactory4" shadow="Vortice.DXGI.IDXGIFactory4Shadow" vtbl="Vortice.DXGI.IDXGIFactory4Shadow.IDXGIFactory4Vtbl" />
+    <define interface="Vortice.DXGI.IDXGIAdapter3" shadow="Vortice.DXGI.IDXGIAdapter3Shadow" vtbl="Vortice.DXGI.IDXGIAdapter3Shadow.IDXGIAdapter3Vtbl" />
+    <define interface="Vortice.DXGI.IDXGIOutput5" shadow="Vortice.DXGI.IDXGIOutput5Shadow" vtbl="Vortice.DXGI.IDXGIOutput5Shadow.IDXGIOutput5Vtbl" />
+    <define interface="Vortice.DXGI.IDXGISwapChain4" shadow="Vortice.DXGI.IDXGISwapChain4Shadow" vtbl="Vortice.DXGI.IDXGISwapChain4Shadow.IDXGISwapChain4Vtbl" />
+    <define interface="Vortice.DXGI.IDXGIDevice4" shadow="Vortice.DXGI.IDXGIDevice4Shadow" vtbl="Vortice.DXGI.IDXGIDevice4Shadow.IDXGIDevice4Vtbl" />
+    <define interface="Vortice.DXGI.IDXGIFactory5" shadow="Vortice.DXGI.IDXGIFactory5Shadow" vtbl="Vortice.DXGI.IDXGIFactory5Shadow.IDXGIFactory5Vtbl" />
+    <define interface="Vortice.DXGI.IDXGIAdapter4" shadow="Vortice.DXGI.IDXGIAdapter4Shadow" vtbl="Vortice.DXGI.IDXGIAdapter4Shadow.IDXGIAdapter4Vtbl" />
+    <define interface="Vortice.DXGI.IDXGIOutput6" shadow="Vortice.DXGI.IDXGIOutput6Shadow" vtbl="Vortice.DXGI.IDXGIOutput6Shadow.IDXGIOutput6Vtbl" />
+    <define interface="Vortice.DXGI.IDXGIFactory6" shadow="Vortice.DXGI.IDXGIFactory6Shadow" vtbl="Vortice.DXGI.IDXGIFactory6Shadow.IDXGIFactory6Vtbl" />
+    <define interface="Vortice.DXGI.IDXGIFactory7" shadow="Vortice.DXGI.IDXGIFactory7Shadow" vtbl="Vortice.DXGI.IDXGIFactory7Shadow.IDXGIFactory7Vtbl" />
+    <define interface="Vortice.DXGI.IDXGraphicsAnalysis" shadow="Vortice.DXGI.IDXGraphicsAnalysisShadow" vtbl="Vortice.DXGI.IDXGraphicsAnalysisShadow.IDXGraphicsAnalysisVtbl" />
+    <define interface="Vortice.DXGI.ISurfaceImageSourceNative" shadow="Vortice.DXGI.ISurfaceImageSourceNativeShadow" vtbl="Vortice.DXGI.ISurfaceImageSourceNativeShadow.ISurfaceImageSourceNativeVtbl" />
+    <define interface="Vortice.DXGI.IVirtualSurfaceUpdatesCallbackNative" shadow="Vortice.DXGI.IVirtualSurfaceUpdatesCallbackNativeShadow" vtbl="Vortice.DXGI.IVirtualSurfaceUpdatesCallbackNativeShadow.IVirtualSurfaceUpdatesCallbackNativeVtbl" />
+    <define interface="Vortice.DXGI.IVirtualSurfaceImageSourceNative" shadow="Vortice.DXGI.IVirtualSurfaceImageSourceNativeShadow" vtbl="Vortice.DXGI.IVirtualSurfaceImageSourceNativeShadow.IVirtualSurfaceImageSourceNativeVtbl" />
+    <define interface="Vortice.DXGI.ISwapChainBackgroundPanelNative" shadow="Vortice.DXGI.ISwapChainBackgroundPanelNativeShadow" vtbl="Vortice.DXGI.ISwapChainBackgroundPanelNativeShadow.ISwapChainBackgroundPanelNativeVtbl" />
+    <define interface="Vortice.DXGI.ISurfaceImageSourceManagerNative" shadow="Vortice.DXGI.ISurfaceImageSourceManagerNativeShadow" vtbl="Vortice.DXGI.ISurfaceImageSourceManagerNativeShadow.ISurfaceImageSourceManagerNativeVtbl" />
+    <define interface="Vortice.DXGI.ISurfaceImageSourceNativeWithD2D" shadow="Vortice.DXGI.ISurfaceImageSourceNativeWithD2DShadow" vtbl="Vortice.DXGI.ISurfaceImageSourceNativeWithD2DShadow.ISurfaceImageSourceNativeWithD2DVtbl" />
+    <define interface="Vortice.DXGI.ISwapChainPanelNative" shadow="Vortice.DXGI.ISwapChainPanelNativeShadow" vtbl="Vortice.DXGI.ISwapChainPanelNativeShadow.ISwapChainPanelNativeVtbl" />
+    <define interface="Vortice.DXGI.ISwapChainPanelNative2" shadow="Vortice.DXGI.ISwapChainPanelNative2Shadow" vtbl="Vortice.DXGI.ISwapChainPanelNative2Shadow.ISwapChainPanelNative2Vtbl" />
+    <define interface="Vortice.DXGI.WinUI.IWindowNative" shadow="Vortice.DXGI.WinUI.IWindowNativeShadow" vtbl="Vortice.DXGI.WinUI.IWindowNativeShadow.IWindowNativeVtbl" />
+    <define interface="Vortice.DXGI.WinUI.IDesktopWindowXamlSourceNative" shadow="Vortice.DXGI.WinUI.IDesktopWindowXamlSourceNativeShadow" vtbl="Vortice.DXGI.WinUI.IDesktopWindowXamlSourceNativeShadow.IDesktopWindowXamlSourceNativeVtbl" />
+    <define interface="Vortice.DXGI.WinUI.IXamlRootNative" shadow="Vortice.DXGI.WinUI.IXamlRootNativeShadow" vtbl="Vortice.DXGI.WinUI.IXamlRootNativeShadow.IXamlRootNativeVtbl" />
+  </extension>
+  <bindings>
+    <bind from="DXGI_RGB" to="Vortice.Mathematics.Color3" />
+    <bind from="DXGI_RGBA" to="Vortice.Mathematics.Color4" />
+    <bind from="DXGI_MATRIX_3X2_F" to="System.Numerics.Matrix3x2" />
+    <bind from="uint32_t" to="System.Int32" />
+    <bind from="UINT32" to="System.Int32" />
+    <bind from="UINT" to="System.Int32" />
+    <bind from="LUID" to="System.Int64" />
+    <bind from="HWND" to="System.IntPtr" />
+    <bind from="HDC" to="System.IntPtr" />
+    <bind from="HINSTANCE" to="System.IntPtr" />
+    <bind from="HBITMAP" to="System.IntPtr" />
+    <bind from="HICON" to="System.IntPtr" />
+    <bind from="HPALETTE" to="System.IntPtr" />
+    <bind from="HMONITOR" to="System.IntPtr" />
+    <bind from="POINT" to="Vortice.Mathematics.Point" />
+    <bind from="SIZE" to="Vortice.Mathematics.Size" />
+    <bind from="RECT" to="Vortice.RawRect" />
+    <bind from="D3DCOLORVALUE" to="Vortice.Mathematics.Color4" />
+    <bind from="void" to="void" />
+    <bind from="int" to="System.Int32" />
+    <bind from="unsigned int" to="System.UInt32" />
+    <bind from="short" to="System.Int16" />
+    <bind from="unsigned short" to="System.UInt16" />
+    <bind from="unsigned char" to="System.Byte" />
+    <bind from="longlong" to="System.Int64" />
+    <bind from="unsigned longlong" to="System.UInt64" />
+    <bind from="float" to="System.Single" />
+    <bind from="double" to="System.Double" />
+    <bind from="size_t" to="SharpGen.Runtime.PointerSize" />
+    <bind from="ptrdiff_t" to="SharpGen.Runtime.PointerSize" />
+    <bind from="bool" to="System.Boolean" marshal="System.Byte" />
+    <bind from="__function__stdcall" to="SharpGen.Runtime.FunctionCallback" />
+    <bind from="GUID" to="System.Guid" />
+    <bind from="SHARPGEN_RUNTIME_SEEKORIGIN" to="System.IO.SeekOrigin" />
+    <bind from="INT_PTR" to="System.IntPtr" />
+    <bind from="UINT_PTR" to="System.UIntPtr" />
+    <bind from="LONG_PTR" to="System.IntPtr" />
+    <bind from="ULONG_PTR" to="System.UIntPtr" />
+    <bind from="HANDLE_PTR" to="System.IntPtr" />
+    <bind from="BOOL" to="SharpGen.Runtime.Win32.RawBool" />
+    <bind from="HANDLE" to="System.IntPtr" />
+    <bind from="HRESULT" to="SharpGen.Runtime.Result" />
+    <bind from="SIZE_T" to="SharpGen.Runtime.PointerSize" />
+    <bind from="SSIZE_T" to="SharpGen.Runtime.PointerSize" />
+    <bind from="MSG" to="SharpGen.Runtime.Win32.NativeMessage" />
+    <bind from="LARGE_INTEGER" to="System.Int64" />
+    <bind from="ULARGE_INTEGER" to="System.Int64" />
+    <bind from="FILETIME" to="System.Int64" />
+    <bind from="DWORD" to="System.Int32" />
+    <bind from="ULONG" to="System.UInt32" />
+    <bind from="LONG" to="System.Int32" />
+    <bind from="SECURITY_ATTRIBUTES" to="SharpGen.Runtime.Win32.SecurityAttributes" />
+    <bind from="VARIANT" to="SharpGen.Runtime.Win32.Variant" />
+    <bind from="PROPVARIANT" to="SharpGen.Runtime.Win32.Variant" />
+    <bind from="DISPPARAMS" to="System.Runtime.InteropServices.ComTypes.DISPPARAMS" />
+    <bind from="EXCEPINFO" to="System.Runtime.InteropServices.ComTypes.EXCEPINFO" />
+    <bind from="ITypeInfo" to="SharpGen.Runtime.ComObject" />
+    <bind from="IErrorLog" to="SharpGen.Runtime.ComObject" />
+    <bind from="IMoniker" to="SharpGen.Runtime.ComObject" />
+    <bind from="IEnumMoniker" to="SharpGen.Runtime.ComObject" />
+    <bind from="IBindCtx" to="SharpGen.Runtime.ComObject" />
+    <bind from="IRpcStubBuffer" to="SharpGen.Runtime.ComObject" />
+    <bind from="IRpcChannelBuffer" to="SharpGen.Runtime.ComObject" />
+    <bind from="IPropertyStore" to="SharpGen.Runtime.ComObject" />
+    <bind from="IPropertyBag2" to="SharpGen.Runtime.Win32.PropertyBag" />
+    <bind from="IClassFactory" to="SharpGen.Runtime.ComObject" />
+    <bind from="IEnumString" to="SharpGen.Runtime.ComObject" />
+    <bind from="INamedPropertyStore" to="SharpGen.Runtime.ComObject" />
+    <bind from="HSTRING" to="System.IntPtr" />
+    <bind from="LOCKTYPE" to="SharpGen.Runtime.Win32.LockType" />
+    <bind from="STGC" to="SharpGen.Runtime.Win32.CommitFlags" />
+    <bind from="STATFLAG" to="SharpGen.Runtime.Win32.StorageStatisticsFlags" />
+    <bind from="SHARPGEN_RUNTIME_COM_ERRORCODE" to="SharpGen.Runtime.ErrorCode" />
+    <bind from="STATSTG" to="SharpGen.Runtime.Win32.StorageStatistics" />
+    <bind from="IUnknown" to="SharpGen.Runtime.IUnknown" />
+    <bind from="ISequentialStream" to="SharpGen.Runtime.Win32.IStreamBase" />
+    <bind from="IStream" to="SharpGen.Runtime.Win32.IStream" />
+    <bind from="D3D_DRIVER_TYPE" to="Vortice.Direct3D.DriverType" />
+    <bind from="D3D_FEATURE_LEVEL" to="Vortice.Direct3D.FeatureLevel" />
+    <bind from="D3D_PRIMITIVE_TOPOLOGY" to="Vortice.Direct3D.PrimitiveTopology" />
+    <bind from="D3D_PRIMITIVE" to="Vortice.Direct3D.InputPrimitive" />
+    <bind from="D3D_SRV_DIMENSION" to="Vortice.Direct3D.ShaderResourceViewDimension" />
+    <bind from="D3D_INCLUDE_TYPE" to="Vortice.Direct3D.IncludeType" />
+    <bind from="D3D_SHADER_VARIABLE_CLASS" to="Vortice.Direct3D.ShaderVariableClass" />
+    <bind from="D3D_SHADER_VARIABLE_FLAGS" to="Vortice.Direct3D.ShaderVariableFlags" />
+    <bind from="D3D_SHADER_VARIABLE_TYPE" to="Vortice.Direct3D.ShaderVariableType" />
+    <bind from="D3D_SHADER_INPUT_FLAGS" to="Vortice.Direct3D.ShaderInputFlags" />
+    <bind from="D3D_SHADER_INPUT_TYPE" to="Vortice.Direct3D.ShaderInputType" />
+    <bind from="D3D_SHADER_CBUFFER_FLAGS" to="Vortice.Direct3D.ConstantBufferFlags" />
+    <bind from="D3D_CBUFFER_TYPE" to="Vortice.Direct3D.ConstantBufferType" />
+    <bind from="D3D_NAME" to="Vortice.Direct3D.SystemValueType" />
+    <bind from="D3D_RESOURCE_RETURN_TYPE" to="Vortice.Direct3D.ResourceReturnType" />
+    <bind from="D3D_REGISTER_COMPONENT_TYPE" to="Vortice.Direct3D.RegisterComponentType" />
+    <bind from="D3D_TESSELLATOR_DOMAIN" to="Vortice.Direct3D.TessellatorDomain" />
+    <bind from="D3D_TESSELLATOR_PARTITIONING" to="Vortice.Direct3D.TessellatorPartitioning" />
+    <bind from="D3D_TESSELLATOR_OUTPUT_PRIMITIVE" to="Vortice.Direct3D.TessellatorOutputPrimitive" />
+    <bind from="D3D_MIN_PRECISION" to="Vortice.Direct3D.MinPrecision" />
+    <bind from="D3D_INTERPOLATION_MODE" to="Vortice.Direct3D.InterpolationMode" />
+    <bind from="D3D_PARAMETER_FLAGS" to="Vortice.Direct3D.ParameterFlags" />
+    <bind from="DXCoreAdapterProperty" to="Vortice.DXCore.AdapterProperty" />
+    <bind from="DXCoreAdapterState" to="Vortice.DXCore.AdapterState" />
+    <bind from="DXCoreSegmentGroup" to="Vortice.DXCore.SegmentGroup" />
+    <bind from="DXCoreNotificationType" to="Vortice.DXCore.NotificationType" />
+    <bind from="DXCoreAdapterPreference" to="Vortice.DXCore.AdapterPreference" />
+    <bind from="D3D_SHADER_MACRO" to="Vortice.Direct3D.ShaderMacro" />
+    <bind from="DXCoreHardwareID" to="Vortice.DXCore.HardwareID" />
+    <bind from="DXCoreHardwareIDParts" to="Vortice.DXCore.HardwareIDParts" />
+    <bind from="DXCoreAdapterMemoryBudgetNodeSegmentGroup" to="Vortice.DXCore.AdapterMemoryBudgetNodeSegmentGroup" />
+    <bind from="DXCoreAdapterMemoryBudget" to="Vortice.DXCore.AdapterMemoryBudget" />
+    <bind from="ID3D10Blob" to="Vortice.Direct3D.Blob" />
+    <bind from="ID3DDestructionNotifier" to="Vortice.Direct3D.DestructionNotifier" />
+    <bind from="ID3DInclude" to="Vortice.Direct3D.Include" />
+    <bind from="IDXCoreAdapter" to="Vortice.DXCore.IDXCoreAdapter" />
+    <bind from="IDXCoreAdapterList" to="Vortice.DXCore.IDXCoreAdapterList" />
+    <bind from="IDXCoreAdapterFactory" to="Vortice.DXCore.IDXCoreAdapterFactory" />
+    <bind from="DXGI_FORMAT" to="Vortice.DXGI.Format" />
+    <bind from="DXGI_DEBUG_RLO_FLAGS" to="Vortice.DXGI.ReportLiveObjectFlags" />
+    <bind from="DXGI_INFO_QUEUE_MESSAGE_CATEGORY" to="Vortice.DXGI.InfoQueueMessageCategory" />
+    <bind from="DXGI_INFO_QUEUE_MESSAGE_SEVERITY" to="Vortice.DXGI.InfoQueueMessageSeverity" />
+    <bind from="DXGI_MODE_SCANLINE_ORDER" to="Vortice.DXGI.ModeScanlineOrder" />
+    <bind from="DXGI_MODE_SCALING" to="Vortice.DXGI.ModeScaling" />
+    <bind from="DXGI_MODE_ROTATION" to="Vortice.DXGI.ModeRotation" />
+    <bind from="DXGI_COLOR_SPACE_TYPE" to="Vortice.DXGI.ColorSpaceType" />
+    <bind from="DXGI_RESIDENCY" to="Vortice.DXGI.Residency" />
+    <bind from="DXGI_SWAP_EFFECT" to="Vortice.DXGI.SwapEffect" />
+    <bind from="DXGI_SWAP_CHAIN_FLAG" to="Vortice.DXGI.SwapChainFlags" />
+    <bind from="DXGI_ADAPTER_FLAG" to="Vortice.DXGI.AdapterFlags" />
+    <bind from="DXGI_OUTDUPL_POINTER_SHAPE_TYPE" to="Vortice.DXGI.PointerShapeType" />
+    <bind from="DXGI_ALPHA_MODE" to="Vortice.DXGI.AlphaMode" />
+    <bind from="DXGI_OFFER_RESOURCE_PRIORITY" to="Vortice.DXGI.OfferResourcePriority" />
+    <bind from="DXGI_SCALING" to="Vortice.DXGI.Scaling" />
+    <bind from="DXGI_GRAPHICS_PREEMPTION_GRANULARITY" to="Vortice.DXGI.GraphicsPreemptionGranularity" />
+    <bind from="DXGI_COMPUTE_PREEMPTION_GRANULARITY" to="Vortice.DXGI.ComputePreemptionGranularity" />
+    <bind from="DXGI_MULTIPLANE_OVERLAY_YCbCr_FLAGS" to="Vortice.DXGI.MultiplaneOverlayYCbCrFlags" />
+    <bind from="DXGI_FRAME_PRESENTATION_MODE" to="Vortice.DXGI.FramePresentationMode" />
+    <bind from="DXGI_OVERLAY_SUPPORT_FLAG" to="Vortice.DXGI.OverlaySupportFlags" />
+    <bind from="DXGI_SWAP_CHAIN_COLOR_SPACE_SUPPORT_FLAG" to="Vortice.DXGI.SwapChainColorSpaceSupportFlags" />
+    <bind from="DXGI_OVERLAY_COLOR_SPACE_SUPPORT_FLAG" to="Vortice.DXGI.OverlayColorSpaceSupportFlags" />
+    <bind from="DXGI_MEMORY_SEGMENT_GROUP" to="Vortice.DXGI.MemorySegmentGroup" />
+    <bind from="DXGI_OUTDUPL_FLAG" to="Vortice.DXGI.OutduplFlag" />
+    <bind from="DXGI_HDR_METADATA_TYPE" to="Vortice.DXGI.HdrMetadataType" />
+    <bind from="DXGI_OFFER_RESOURCE_FLAGS" to="Vortice.DXGI.OfferResourceFlags" />
+    <bind from="DXGI_RECLAIM_RESOURCE_RESULTS" to="Vortice.DXGI.ReclaimResourceResults" />
+    <bind from="DXGI_FEATURE" to="Vortice.DXGI.Feature" />
+    <bind from="DXGI_ADAPTER_FLAG3" to="Vortice.DXGI.AdapterFlags3" />
+    <bind from="DXGI_HARDWARE_COMPOSITION_SUPPORT_FLAGS" to="Vortice.DXGI.HardwareCompositionSupportFlags" />
+    <bind from="DXGI_GPU_PREFERENCE" to="Vortice.DXGI.GpuPreference" />
+    <bind from="DXGI_PRESENT_FLAGS" to="Vortice.DXGI.PresentFlags" />
+    <bind from="DXGI_USAGE_ENUM" to="Vortice.DXGI.Usage" />
+    <bind from="DXGI_RESOURCE_PRIORITY" to="Vortice.DXGI.ResourcePriority" />
+    <bind from="DXGI_MAP_FLAGS" to="Vortice.DXGI.MapFlags" />
+    <bind from="DXGI_ENUM_MODES_FLAGS" to="Vortice.DXGI.DisplayModeEnumerationFlags" />
+    <bind from="DXGI_MWA_FLAGS" to="Vortice.DXGI.WindowAssociationFlags" />
+    <bind from="DXGI_SHARED_RESOURCE_FLAGS" to="Vortice.DXGI.SharedResourceFlags" />
+    <bind from="DXGI_INFO_QUEUE_MESSAGE" to="Vortice.DXGI.InfoQueueMessage" />
+    <bind from="DXGI_INFO_QUEUE_FILTER_DESC" to="Vortice.DXGI.InfoQueueFilterDescription" />
+    <bind from="DXGI_INFO_QUEUE_FILTER" to="Vortice.DXGI.InfoQueueFilter" />
+    <bind from="DXGI_GAMMA_CONTROL" to="Vortice.DXGI.GammaControl" />
+    <bind from="DXGI_GAMMA_CONTROL_CAPABILITIES" to="Vortice.DXGI.GammaControlCapabilities" />
+    <bind from="DXGI_MODE_DESC" to="Vortice.DXGI.ModeDescription" />
+    <bind from="DXGI_JPEG_DC_HUFFMAN_TABLE" to="Vortice.DXGI.JpegDcHuffmanTable" />
+    <bind from="DXGI_JPEG_AC_HUFFMAN_TABLE" to="Vortice.DXGI.JpegAcHuffmanTable" />
+    <bind from="DXGI_JPEG_QUANTIZATION_TABLE" to="Vortice.DXGI.JpegQuantizationTable" />
+    <bind from="DXGI_RATIONAL" to="Vortice.DXGI.Rational" />
+    <bind from="DXGI_SAMPLE_DESC" to="Vortice.DXGI.SampleDescription" />
+    <bind from="DXGI_FRAME_STATISTICS" to="Vortice.DXGI.FrameStatistics" />
+    <bind from="DXGI_MAPPED_RECT" to="Vortice.DXGI.MappedRect" />
+    <bind from="DXGI_ADAPTER_DESC" to="Vortice.DXGI.AdapterDescription" />
+    <bind from="DXGI_OUTPUT_DESC" to="Vortice.DXGI.OutputDescription" />
+    <bind from="DXGI_SHARED_RESOURCE" to="Vortice.DXGI.SharedResource" />
+    <bind from="DXGI_SURFACE_DESC" to="Vortice.DXGI.SurfaceDescription" />
+    <bind from="DXGI_SWAP_CHAIN_DESC" to="Vortice.DXGI.SwapChainDescription" />
+    <bind from="DXGI_ADAPTER_DESC1" to="Vortice.DXGI.AdapterDescription1" />
+    <bind from="DXGI_DISPLAY_COLOR_SPACE" to="Vortice.DXGI.DisplayColorSpace" />
+    <bind from="DXGI_OUTDUPL_MOVE_RECT" to="Vortice.DXGI.OutduplMoveRect" />
+    <bind from="DXGI_OUTDUPL_DESC" to="Vortice.DXGI.OutduplDescription" />
+    <bind from="DXGI_OUTDUPL_POINTER_POSITION" to="Vortice.DXGI.OutduplPointerPosition" />
+    <bind from="DXGI_OUTDUPL_POINTER_SHAPE_INFO" to="Vortice.DXGI.OutduplPointerShapeInfo" />
+    <bind from="DXGI_OUTDUPL_FRAME_INFO" to="Vortice.DXGI.OutduplFrameInfo" />
+    <bind from="DXGI_MODE_DESC1" to="Vortice.DXGI.ModeDescription1" />
+    <bind from="DXGI_SWAP_CHAIN_DESC1" to="Vortice.DXGI.SwapChainDescription1" />
+    <bind from="DXGI_SWAP_CHAIN_FULLSCREEN_DESC" to="Vortice.DXGI.SwapChainFullscreenDescription" />
+    <bind from="DXGI_PRESENT_PARAMETERS" to="Vortice.DXGI.PresentParameters" />
+    <bind from="DXGI_ADAPTER_DESC2" to="Vortice.DXGI.AdapterDescription2" />
+    <bind from="DXGI_DECODE_SWAP_CHAIN_DESC" to="Vortice.DXGI.DecodeSwapChainDescription" />
+    <bind from="DXGI_FRAME_STATISTICS_MEDIA" to="Vortice.DXGI.FrameStatisticsMedia" />
+    <bind from="DXGI_QUERY_VIDEO_MEMORY_INFO" to="Vortice.DXGI.QueryVideoMemoryInfo" />
+    <bind from="DXGI_HDR_METADATA_HDR10" to="Vortice.DXGI.HdrMetadataHdr10" />
+    <bind from="DXGI_HDR_METADATA_HDR10PLUS" to="Vortice.DXGI.HdrMetadataHdr10plus" />
+    <bind from="DXGI_ADAPTER_DESC3" to="Vortice.DXGI.AdapterDescription3" />
+    <bind from="DXGI_OUTPUT_DESC1" to="Vortice.DXGI.OutputDescription1" />
+    <bind from="IDXGIInfoQueue" to="Vortice.DXGI.IDXGIInfoQueue" />
+    <bind from="IDXGIDebug" to="Vortice.DXGI.IDXGIDebug" />
+    <bind from="IDXGIDebug1" to="Vortice.DXGI.IDXGIDebug1" />
+    <bind from="IDXGIObject" to="Vortice.DXGI.IDXGIObject" />
+    <bind from="IDXGIDeviceSubObject" to="Vortice.DXGI.IDXGIDeviceSubObject" />
+    <bind from="IDXGIResource" to="Vortice.DXGI.IDXGIResource" />
+    <bind from="IDXGIKeyedMutex" to="Vortice.DXGI.IDXGIKeyedMutex" />
+    <bind from="IDXGISurface" to="Vortice.DXGI.IDXGISurface" />
+    <bind from="IDXGISurface1" to="Vortice.DXGI.IDXGISurface1" />
+    <bind from="IDXGIAdapter" to="Vortice.DXGI.IDXGIAdapter" />
+    <bind from="IDXGIOutput" to="Vortice.DXGI.IDXGIOutput" />
+    <bind from="IDXGISwapChain" to="Vortice.DXGI.IDXGISwapChain" />
+    <bind from="IDXGIFactory" to="Vortice.DXGI.IDXGIFactory" />
+    <bind from="IDXGIDevice" to="Vortice.DXGI.IDXGIDevice" />
+    <bind from="IDXGIFactory1" to="Vortice.DXGI.IDXGIFactory1" />
+    <bind from="IDXGIAdapter1" to="Vortice.DXGI.IDXGIAdapter1" />
+    <bind from="IDXGIDevice1" to="Vortice.DXGI.IDXGIDevice1" />
+    <bind from="IDXGIDisplayControl" to="Vortice.DXGI.IDXGIDisplayControl" />
+    <bind from="IDXGIOutputDuplication" to="Vortice.DXGI.IDXGIOutputDuplication" />
+    <bind from="IDXGISurface2" to="Vortice.DXGI.IDXGISurface2" />
+    <bind from="IDXGIResource1" to="Vortice.DXGI.IDXGIResource1" />
+    <bind from="IDXGIDevice2" to="Vortice.DXGI.IDXGIDevice2" />
+    <bind from="IDXGISwapChain1" to="Vortice.DXGI.IDXGISwapChain1" />
+    <bind from="IDXGIFactory2" to="Vortice.DXGI.IDXGIFactory2" />
+    <bind from="IDXGIAdapter2" to="Vortice.DXGI.IDXGIAdapter2" />
+    <bind from="IDXGIOutput1" to="Vortice.DXGI.IDXGIOutput1" />
+    <bind from="IDXGIDevice3" to="Vortice.DXGI.IDXGIDevice3" />
+    <bind from="IDXGISwapChain2" to="Vortice.DXGI.IDXGISwapChain2" />
+    <bind from="IDXGIOutput2" to="Vortice.DXGI.IDXGIOutput2" />
+    <bind from="IDXGIFactory3" to="Vortice.DXGI.IDXGIFactory3" />
+    <bind from="IDXGIDecodeSwapChain" to="Vortice.DXGI.IDXGIDecodeSwapChain" />
+    <bind from="IDXGIFactoryMedia" to="Vortice.DXGI.IDXGIFactoryMedia" />
+    <bind from="IDXGISwapChainMedia" to="Vortice.DXGI.IDXGISwapChainMedia" />
+    <bind from="IDXGIOutput3" to="Vortice.DXGI.IDXGIOutput3" />
+    <bind from="IDXGISwapChain3" to="Vortice.DXGI.IDXGISwapChain3" />
+    <bind from="IDXGIOutput4" to="Vortice.DXGI.IDXGIOutput4" />
+    <bind from="IDXGIFactory4" to="Vortice.DXGI.IDXGIFactory4" />
+    <bind from="IDXGIAdapter3" to="Vortice.DXGI.IDXGIAdapter3" />
+    <bind from="IDXGIOutput5" to="Vortice.DXGI.IDXGIOutput5" />
+    <bind from="IDXGISwapChain4" to="Vortice.DXGI.IDXGISwapChain4" />
+    <bind from="IDXGIDevice4" to="Vortice.DXGI.IDXGIDevice4" />
+    <bind from="IDXGIFactory5" to="Vortice.DXGI.IDXGIFactory5" />
+    <bind from="IDXGIAdapter4" to="Vortice.DXGI.IDXGIAdapter4" />
+    <bind from="IDXGIOutput6" to="Vortice.DXGI.IDXGIOutput6" />
+    <bind from="IDXGIFactory6" to="Vortice.DXGI.IDXGIFactory6" />
+    <bind from="IDXGIFactory7" to="Vortice.DXGI.IDXGIFactory7" />
+    <bind from="IDXGraphicsAnalysis" to="Vortice.DXGI.IDXGraphicsAnalysis" />
+    <bind from="ISurfaceImageSourceNative" to="Vortice.DXGI.ISurfaceImageSourceNative" />
+    <bind from="IVirtualSurfaceUpdatesCallbackNative" to="Vortice.DXGI.IVirtualSurfaceUpdatesCallbackNative" />
+    <bind from="IVirtualSurfaceImageSourceNative" to="Vortice.DXGI.IVirtualSurfaceImageSourceNative" />
+    <bind from="ISwapChainBackgroundPanelNative" to="Vortice.DXGI.ISwapChainBackgroundPanelNative" />
+    <bind from="ISurfaceImageSourceManagerNative" to="Vortice.DXGI.ISurfaceImageSourceManagerNative" />
+    <bind from="ISurfaceImageSourceNativeWithD2D" to="Vortice.DXGI.ISurfaceImageSourceNativeWithD2D" />
+    <bind from="ISwapChainPanelNative" to="Vortice.DXGI.ISwapChainPanelNative" />
+    <bind from="ISwapChainPanelNative2" to="Vortice.DXGI.ISwapChainPanelNative2" />
+    <bind from="IWindowNative" to="Vortice.DXGI.WinUI.IWindowNative" />
+    <bind from="IDesktopWindowXamlSourceNative" to="Vortice.DXGI.WinUI.IDesktopWindowXamlSourceNative" />
+    <bind from="IXamlRootNative" to="Vortice.DXGI.WinUI.IXamlRootNative" />
+  </bindings>
+  <mapping>
+    <map doc="DXGI_RGB" check="true" name="Vortice.Mathematics.Color3" offset-translate="0" />
+    <map doc="DXGI_RGBA" check="true" name="Vortice.Mathematics.Color4" offset-translate="0" />
+    <map doc="DXGI_MATRIX_3X2_F" check="true" name="System.Numerics.Matrix3x2" offset-translate="0" />
+    <map doc="uint32_t" check="true" name="System.Int32" offset-translate="0" />
+    <map doc="UINT32" check="true" name="System.Int32" offset-translate="0" />
+    <map doc="UINT" check="true" name="System.Int32" offset-translate="0" />
+    <map doc="LUID" check="true" name="System.Int64" offset-translate="0" />
+    <map doc="HWND" check="true" name="System.IntPtr" offset-translate="0" />
+    <map doc="HDC" check="true" name="System.IntPtr" offset-translate="0" />
+    <map doc="HINSTANCE" check="true" name="System.IntPtr" offset-translate="0" />
+    <map doc="HBITMAP" check="true" name="System.IntPtr" offset-translate="0" />
+    <map doc="HICON" check="true" name="System.IntPtr" offset-translate="0" />
+    <map doc="HPALETTE" check="true" name="System.IntPtr" offset-translate="0" />
+    <map doc="HMONITOR" check="true" name="System.IntPtr" offset-translate="0" />
+    <map doc="POINT" check="true" name="Vortice.Mathematics.Point" offset-translate="0" />
+    <map doc="SIZE" check="true" name="Vortice.Mathematics.Size" offset-translate="0" />
+    <map doc="RECT" check="true" name="Vortice.RawRect" offset-translate="0" />
+    <map doc="D3DCOLORVALUE" check="true" name="Vortice.Mathematics.Color4" offset-translate="0" />
+    <map doc="void" check="true" name="void" offset-translate="0" />
+    <map doc="int" check="true" name="System.Int32" offset-translate="0" />
+    <map doc="unsigned int" check="true" name="System.UInt32" offset-translate="0" />
+    <map doc="short" check="true" name="System.Int16" offset-translate="0" />
+    <map doc="unsigned short" check="true" name="System.UInt16" offset-translate="0" />
+    <map doc="unsigned char" check="true" name="System.Byte" offset-translate="0" />
+    <map doc="longlong" check="true" name="System.Int64" offset-translate="0" />
+    <map doc="unsigned longlong" check="true" name="System.UInt64" offset-translate="0" />
+    <map doc="float" check="true" name="System.Single" offset-translate="0" />
+    <map doc="double" check="true" name="System.Double" offset-translate="0" />
+    <map doc="size_t" check="true" name="SharpGen.Runtime.PointerSize" offset-translate="0" />
+    <map doc="ptrdiff_t" check="true" name="SharpGen.Runtime.PointerSize" offset-translate="0" />
+    <map doc="bool" check="true" name="System.Boolean" offset-translate="0" />
+    <map doc="__function__stdcall" check="true" name="SharpGen.Runtime.FunctionCallback" offset-translate="0" />
+    <map doc="GUID" check="true" name="System.Guid" offset-translate="0" />
+    <map doc="SHARPGEN_RUNTIME_SEEKORIGIN" check="true" name="System.IO.SeekOrigin" offset-translate="0" />
+    <map doc="INT_PTR" check="true" name="System.IntPtr" offset-translate="0" />
+    <map doc="UINT_PTR" check="true" name="System.UIntPtr" offset-translate="0" />
+    <map doc="LONG_PTR" check="true" name="System.IntPtr" offset-translate="0" />
+    <map doc="ULONG_PTR" check="true" name="System.UIntPtr" offset-translate="0" />
+    <map doc="HANDLE_PTR" check="true" name="System.IntPtr" offset-translate="0" />
+    <map doc="BOOL" check="true" name="SharpGen.Runtime.Win32.RawBool" offset-translate="0" />
+    <map doc="HANDLE" check="true" name="System.IntPtr" offset-translate="0" />
+    <map doc="HRESULT" check="true" name="SharpGen.Runtime.Result" offset-translate="0" />
+    <map doc="SIZE_T" check="true" name="SharpGen.Runtime.PointerSize" offset-translate="0" />
+    <map doc="SSIZE_T" check="true" name="SharpGen.Runtime.PointerSize" offset-translate="0" />
+    <map doc="MSG" check="true" name="SharpGen.Runtime.Win32.NativeMessage" offset-translate="0" />
+    <map doc="LARGE_INTEGER" check="true" name="System.Int64" offset-translate="0" />
+    <map doc="ULARGE_INTEGER" check="true" name="System.Int64" offset-translate="0" />
+    <map doc="FILETIME" check="true" name="System.Int64" offset-translate="0" />
+    <map doc="DWORD" check="true" name="System.Int32" offset-translate="0" />
+    <map doc="ULONG" check="true" name="System.UInt32" offset-translate="0" />
+    <map doc="LONG" check="true" name="System.Int32" offset-translate="0" />
+    <map doc="SECURITY_ATTRIBUTES" check="true" name="SharpGen.Runtime.Win32.SecurityAttributes" offset-translate="0" />
+    <map doc="VARIANT" check="true" name="SharpGen.Runtime.Win32.Variant" offset-translate="0" />
+    <map doc="PROPVARIANT" check="true" name="SharpGen.Runtime.Win32.Variant" offset-translate="0" />
+    <map doc="DISPPARAMS" check="true" name="System.Runtime.InteropServices.ComTypes.DISPPARAMS" offset-translate="0" />
+    <map doc="EXCEPINFO" check="true" name="System.Runtime.InteropServices.ComTypes.EXCEPINFO" offset-translate="0" />
+    <map doc="ITypeInfo" check="true" name="SharpGen.Runtime.ComObject" offset-translate="0" />
+    <map doc="IErrorLog" check="true" name="SharpGen.Runtime.ComObject" offset-translate="0" />
+    <map doc="IMoniker" check="true" name="SharpGen.Runtime.ComObject" offset-translate="0" />
+    <map doc="IEnumMoniker" check="true" name="SharpGen.Runtime.ComObject" offset-translate="0" />
+    <map doc="IBindCtx" check="true" name="SharpGen.Runtime.ComObject" offset-translate="0" />
+    <map doc="IRpcStubBuffer" check="true" name="SharpGen.Runtime.ComObject" offset-translate="0" />
+    <map doc="IRpcChannelBuffer" check="true" name="SharpGen.Runtime.ComObject" offset-translate="0" />
+    <map doc="IPropertyStore" check="true" name="SharpGen.Runtime.ComObject" offset-translate="0" />
+    <map doc="IPropertyBag2" check="true" name="SharpGen.Runtime.Win32.PropertyBag" offset-translate="0" />
+    <map doc="IClassFactory" check="true" name="SharpGen.Runtime.ComObject" offset-translate="0" />
+    <map doc="IEnumString" check="true" name="SharpGen.Runtime.ComObject" offset-translate="0" />
+    <map doc="INamedPropertyStore" check="true" name="SharpGen.Runtime.ComObject" offset-translate="0" />
+    <map doc="HSTRING" check="true" name="System.IntPtr" offset-translate="0" />
+    <map doc="LOCKTYPE" check="true" name="SharpGen.Runtime.Win32.LockType" offset-translate="0" />
+    <map doc="STGC" check="true" name="SharpGen.Runtime.Win32.CommitFlags" offset-translate="0" />
+    <map doc="STATFLAG" check="true" name="SharpGen.Runtime.Win32.StorageStatisticsFlags" offset-translate="0" />
+    <map doc="SHARPGEN_RUNTIME_COM_ERRORCODE" check="true" name="SharpGen.Runtime.ErrorCode" offset-translate="0" />
+    <map doc="STATSTG" check="true" name="SharpGen.Runtime.Win32.StorageStatistics" offset-translate="0" />
+    <map doc="IUnknown" check="true" name="SharpGen.Runtime.IUnknown" offset-translate="0" />
+    <map doc="ISequentialStream" check="true" name="SharpGen.Runtime.Win32.IStreamBase" offset-translate="0" />
+    <map doc="IStream" check="true" name="SharpGen.Runtime.Win32.IStream" offset-translate="0" />
+    <map doc="D3D_DRIVER_TYPE" check="true" name="Vortice.Direct3D.DriverType" offset-translate="0" />
+    <map doc="D3D_FEATURE_LEVEL" check="true" name="Vortice.Direct3D.FeatureLevel" offset-translate="0" />
+    <map doc="D3D_PRIMITIVE_TOPOLOGY" check="true" name="Vortice.Direct3D.PrimitiveTopology" offset-translate="0" />
+    <map doc="D3D_PRIMITIVE" check="true" name="Vortice.Direct3D.InputPrimitive" offset-translate="0" />
+    <map doc="D3D_SRV_DIMENSION" check="true" name="Vortice.Direct3D.ShaderResourceViewDimension" offset-translate="0" />
+    <map doc="D3D_INCLUDE_TYPE" check="true" name="Vortice.Direct3D.IncludeType" offset-translate="0" />
+    <map doc="D3D_SHADER_VARIABLE_CLASS" check="true" name="Vortice.Direct3D.ShaderVariableClass" offset-translate="0" />
+    <map doc="D3D_SHADER_VARIABLE_FLAGS" check="true" name="Vortice.Direct3D.ShaderVariableFlags" offset-translate="0" />
+    <map doc="D3D_SHADER_VARIABLE_TYPE" check="true" name="Vortice.Direct3D.ShaderVariableType" offset-translate="0" />
+    <map doc="D3D_SHADER_INPUT_FLAGS" check="true" name="Vortice.Direct3D.ShaderInputFlags" offset-translate="0" />
+    <map doc="D3D_SHADER_INPUT_TYPE" check="true" name="Vortice.Direct3D.ShaderInputType" offset-translate="0" />
+    <map doc="D3D_SHADER_CBUFFER_FLAGS" check="true" name="Vortice.Direct3D.ConstantBufferFlags" offset-translate="0" />
+    <map doc="D3D_CBUFFER_TYPE" check="true" name="Vortice.Direct3D.ConstantBufferType" offset-translate="0" />
+    <map doc="D3D_NAME" check="true" name="Vortice.Direct3D.SystemValueType" offset-translate="0" />
+    <map doc="D3D_RESOURCE_RETURN_TYPE" check="true" name="Vortice.Direct3D.ResourceReturnType" offset-translate="0" />
+    <map doc="D3D_REGISTER_COMPONENT_TYPE" check="true" name="Vortice.Direct3D.RegisterComponentType" offset-translate="0" />
+    <map doc="D3D_TESSELLATOR_DOMAIN" check="true" name="Vortice.Direct3D.TessellatorDomain" offset-translate="0" />
+    <map doc="D3D_TESSELLATOR_PARTITIONING" check="true" name="Vortice.Direct3D.TessellatorPartitioning" offset-translate="0" />
+    <map doc="D3D_TESSELLATOR_OUTPUT_PRIMITIVE" check="true" name="Vortice.Direct3D.TessellatorOutputPrimitive" offset-translate="0" />
+    <map doc="D3D_MIN_PRECISION" check="true" name="Vortice.Direct3D.MinPrecision" offset-translate="0" />
+    <map doc="D3D_INTERPOLATION_MODE" check="true" name="Vortice.Direct3D.InterpolationMode" offset-translate="0" />
+    <map doc="D3D_PARAMETER_FLAGS" check="true" name="Vortice.Direct3D.ParameterFlags" offset-translate="0" />
+    <map doc="DXCoreAdapterProperty" check="true" name="Vortice.DXCore.AdapterProperty" offset-translate="0" />
+    <map doc="DXCoreAdapterState" check="true" name="Vortice.DXCore.AdapterState" offset-translate="0" />
+    <map doc="DXCoreSegmentGroup" check="true" name="Vortice.DXCore.SegmentGroup" offset-translate="0" />
+    <map doc="DXCoreNotificationType" check="true" name="Vortice.DXCore.NotificationType" offset-translate="0" />
+    <map doc="DXCoreAdapterPreference" check="true" name="Vortice.DXCore.AdapterPreference" offset-translate="0" />
+    <map doc="D3D_SHADER_MACRO" check="true" name="Vortice.Direct3D.ShaderMacro" offset-translate="0" />
+    <map doc="DXCoreHardwareID" check="true" name="Vortice.DXCore.HardwareID" offset-translate="0" />
+    <map doc="DXCoreHardwareIDParts" check="true" name="Vortice.DXCore.HardwareIDParts" offset-translate="0" />
+    <map doc="DXCoreAdapterMemoryBudgetNodeSegmentGroup" check="true" name="Vortice.DXCore.AdapterMemoryBudgetNodeSegmentGroup" offset-translate="0" />
+    <map doc="DXCoreAdapterMemoryBudget" check="true" name="Vortice.DXCore.AdapterMemoryBudget" offset-translate="0" />
+    <map doc="ID3D10Blob" check="true" name="Vortice.Direct3D.Blob" offset-translate="0" />
+    <map doc="ID3DDestructionNotifier" check="true" name="Vortice.Direct3D.DestructionNotifier" offset-translate="0" />
+    <map doc="ID3DInclude" check="true" name="Vortice.Direct3D.Include" offset-translate="0" />
+    <map doc="IDXCoreAdapter" check="true" name="Vortice.DXCore.IDXCoreAdapter" offset-translate="0" />
+    <map doc="IDXCoreAdapterList" check="true" name="Vortice.DXCore.IDXCoreAdapterList" offset-translate="0" />
+    <map doc="IDXCoreAdapterFactory" check="true" name="Vortice.DXCore.IDXCoreAdapterFactory" offset-translate="0" />
+    <map doc="DXGI_ERROR_INVALID_CALL" check="true" name="InvalidCall" offset-translate="0" />
+    <map doc="DXGI_ERROR_NOT_FOUND" check="true" name="NotFound" offset-translate="0" />
+    <map doc="DXGI_ERROR_MORE_DATA" check="true" name="MoreData" offset-translate="0" />
+    <map doc="DXGI_ERROR_UNSUPPORTED" check="true" name="Unsupported" offset-translate="0" />
+    <map doc="DXGI_ERROR_DEVICE_REMOVED" check="true" name="DeviceRemoved" offset-translate="0" />
+    <map doc="DXGI_ERROR_DEVICE_HUNG" check="true" name="DeviceHung" offset-translate="0" />
+    <map doc="DXGI_ERROR_DEVICE_RESET" check="true" name="DeviceReset" offset-translate="0" />
+    <map doc="DXGI_ERROR_WAS_STILL_DRAWING" check="true" name="WasStillDrawing" offset-translate="0" />
+    <map doc="DXGI_ERROR_FRAME_STATISTICS_DISJOINT" check="true" name="FrameStatisticsDisjoint" offset-translate="0" />
+    <map doc="DXGI_ERROR_GRAPHICS_VIDPN_SOURCE_IN_USE" check="true" name="GraphicsVidpnSourceInUse" offset-translate="0" />
+    <map doc="DXGI_ERROR_DRIVER_INTERNAL_ERROR" check="true" name="DriverInternalError" offset-translate="0" />
+    <map doc="DXGI_ERROR_NONEXCLUSIVE" check="true" name="Nonexclusive" offset-translate="0" />
+    <map doc="DXGI_ERROR_NOT_CURRENTLY_AVAILABLE" check="true" name="NotCurrentlyAvailable" offset-translate="0" />
+    <map doc="DXGI_ERROR_REMOTE_CLIENT_DISCONNECTED" check="true" name="RemoteClientDisconnected" offset-translate="0" />
+    <map doc="DXGI_ERROR_REMOTE_OUTOFMEMORY" check="true" name="RemoteOutofmemory" offset-translate="0" />
+    <map doc="DXGI_ERROR_ACCESS_LOST" check="true" name="AccessLost" offset-translate="0" />
+    <map doc="DXGI_ERROR_WAIT_TIMEOUT" check="true" name="WaitTimeout" offset-translate="0" />
+    <map doc="DXGI_ERROR_SESSION_DISCONNECTED" check="true" name="SessionDisconnected" offset-translate="0" />
+    <map doc="DXGI_ERROR_RESTRICT_TO_OUTPUT_STALE" check="true" name="RestrictToOutputStale" offset-translate="0" />
+    <map doc="DXGI_ERROR_CANNOT_PROTECT_CONTENT" check="true" name="CannotProtectContent" offset-translate="0" />
+    <map doc="DXGI_ERROR_ACCESS_DENIED" check="true" name="AccessDenied" offset-translate="0" />
+    <map doc="DXGI_ERROR_NAME_ALREADY_EXISTS" check="true" name="NameAlreadyExists" offset-translate="0" />
+    <map doc="DXGI_ERROR_SDK_COMPONENT_MISSING" check="true" name="SdkComponentMissing" offset-translate="0" />
+    <map doc="DXGI_ERROR_NOT_CURRENT" check="true" name="NotCurrent" offset-translate="0" />
+    <map doc="DXGI_ERROR_HW_PROTECTION_OUTOFMEMORY" check="true" name="HwProtectionOutofmemory" offset-translate="0" />
+    <map doc="DXGI_ERROR_DYNAMIC_CODE_POLICY_VIOLATION" check="true" name="DynamicCodePolicyViolation" offset-translate="0" />
+    <map doc="DXGI_ERROR_NON_COMPOSITED_UI" check="true" name="NonCompositedUi" offset-translate="0" />
+    <map doc="DXGI_ERROR_MODE_CHANGE_IN_PROGRESS" check="true" name="ModeChangeInProgress" offset-translate="0" />
+    <map doc="DXGI_ERROR_CACHE_CORRUPT" check="true" name="CacheCorrupt" offset-translate="0" />
+    <map doc="DXGI_ERROR_CACHE_FULL" check="true" name="CacheFull" offset-translate="0" />
+    <map doc="DXGI_ERROR_CACHE_HASH_COLLISION" check="true" name="CacheHashCollision" offset-translate="0" />
+    <map doc="DXGI_ERROR_ALREADY_EXISTS" check="true" name="AlreadyExists" offset-translate="0" />
+    <map doc="DXGI_CREATE_FACTORY_DEBUG" check="true" name="CreateFactoryDebug" offset-translate="0" />
+    <map doc="WKPDID_D3DDebugObjectName" check="true" name="DebugObjectName" offset-translate="0" />
+    <map doc="DXGI_FORMAT" check="true" name="Vortice.DXGI.Format" offset-translate="0" />
+    <map doc="DXGI_DEBUG_RLO_FLAGS" check="true" name="Vortice.DXGI.ReportLiveObjectFlags" offset-translate="0" />
+    <map doc="DXGI_INFO_QUEUE_MESSAGE_CATEGORY" check="true" name="Vortice.DXGI.InfoQueueMessageCategory" offset-translate="0" />
+    <map doc="DXGI_INFO_QUEUE_MESSAGE_SEVERITY" check="true" name="Vortice.DXGI.InfoQueueMessageSeverity" offset-translate="0" />
+    <map doc="DXGI_MODE_SCANLINE_ORDER" check="true" name="Vortice.DXGI.ModeScanlineOrder" offset-translate="0" />
+    <map doc="DXGI_MODE_SCALING" check="true" name="Vortice.DXGI.ModeScaling" offset-translate="0" />
+    <map doc="DXGI_MODE_ROTATION" check="true" name="Vortice.DXGI.ModeRotation" offset-translate="0" />
+    <map doc="DXGI_COLOR_SPACE_TYPE" check="true" name="Vortice.DXGI.ColorSpaceType" offset-translate="0" />
+    <map doc="DXGI_RESIDENCY" check="true" name="Vortice.DXGI.Residency" offset-translate="0" />
+    <map doc="DXGI_SWAP_EFFECT" check="true" name="Vortice.DXGI.SwapEffect" offset-translate="0" />
+    <map doc="DXGI_SWAP_CHAIN_FLAG" check="true" name="Vortice.DXGI.SwapChainFlags" offset-translate="0" />
+    <map doc="DXGI_ADAPTER_FLAG" check="true" name="Vortice.DXGI.AdapterFlags" offset-translate="0" />
+    <map doc="DXGI_OUTDUPL_POINTER_SHAPE_TYPE" check="true" name="Vortice.DXGI.PointerShapeType" offset-translate="0" />
+    <map doc="DXGI_ALPHA_MODE" check="true" name="Vortice.DXGI.AlphaMode" offset-translate="0" />
+    <map doc="DXGI_OFFER_RESOURCE_PRIORITY" check="true" name="Vortice.DXGI.OfferResourcePriority" offset-translate="0" />
+    <map doc="DXGI_SCALING" check="true" name="Vortice.DXGI.Scaling" offset-translate="0" />
+    <map doc="DXGI_GRAPHICS_PREEMPTION_GRANULARITY" check="true" name="Vortice.DXGI.GraphicsPreemptionGranularity" offset-translate="0" />
+    <map doc="DXGI_COMPUTE_PREEMPTION_GRANULARITY" check="true" name="Vortice.DXGI.ComputePreemptionGranularity" offset-translate="0" />
+    <map doc="DXGI_MULTIPLANE_OVERLAY_YCbCr_FLAGS" check="true" name="Vortice.DXGI.MultiplaneOverlayYCbCrFlags" offset-translate="0" />
+    <map doc="DXGI_FRAME_PRESENTATION_MODE" check="true" name="Vortice.DXGI.FramePresentationMode" offset-translate="0" />
+    <map doc="DXGI_OVERLAY_SUPPORT_FLAG" check="true" name="Vortice.DXGI.OverlaySupportFlags" offset-translate="0" />
+    <map doc="DXGI_SWAP_CHAIN_COLOR_SPACE_SUPPORT_FLAG" check="true" name="Vortice.DXGI.SwapChainColorSpaceSupportFlags" offset-translate="0" />
+    <map doc="DXGI_OVERLAY_COLOR_SPACE_SUPPORT_FLAG" check="true" name="Vortice.DXGI.OverlayColorSpaceSupportFlags" offset-translate="0" />
+    <map doc="DXGI_MEMORY_SEGMENT_GROUP" check="true" name="Vortice.DXGI.MemorySegmentGroup" offset-translate="0" />
+    <map doc="DXGI_OUTDUPL_FLAG" check="true" name="Vortice.DXGI.OutduplFlag" offset-translate="0" />
+    <map doc="DXGI_HDR_METADATA_TYPE" check="true" name="Vortice.DXGI.HdrMetadataType" offset-translate="0" />
+    <map doc="DXGI_OFFER_RESOURCE_FLAGS" check="true" name="Vortice.DXGI.OfferResourceFlags" offset-translate="0" />
+    <map doc="DXGI_RECLAIM_RESOURCE_RESULTS" check="true" name="Vortice.DXGI.ReclaimResourceResults" offset-translate="0" />
+    <map doc="DXGI_FEATURE" check="true" name="Vortice.DXGI.Feature" offset-translate="0" />
+    <map doc="DXGI_ADAPTER_FLAG3" check="true" name="Vortice.DXGI.AdapterFlags3" offset-translate="0" />
+    <map doc="DXGI_HARDWARE_COMPOSITION_SUPPORT_FLAGS" check="true" name="Vortice.DXGI.HardwareCompositionSupportFlags" offset-translate="0" />
+    <map doc="DXGI_GPU_PREFERENCE" check="true" name="Vortice.DXGI.GpuPreference" offset-translate="0" />
+    <map doc="DXGI_PRESENT_FLAGS" check="true" name="Vortice.DXGI.PresentFlags" offset-translate="0" />
+    <map doc="DXGI_USAGE_ENUM" check="true" name="Vortice.DXGI.Usage" offset-translate="0" />
+    <map doc="DXGI_RESOURCE_PRIORITY" check="true" name="Vortice.DXGI.ResourcePriority" offset-translate="0" />
+    <map doc="DXGI_MAP_FLAGS" check="true" name="Vortice.DXGI.MapFlags" offset-translate="0" />
+    <map doc="DXGI_ENUM_MODES_FLAGS" check="true" name="Vortice.DXGI.DisplayModeEnumerationFlags" offset-translate="0" />
+    <map doc="DXGI_MWA_FLAGS" check="true" name="Vortice.DXGI.WindowAssociationFlags" offset-translate="0" />
+    <map doc="DXGI_SHARED_RESOURCE_FLAGS" check="true" name="Vortice.DXGI.SharedResourceFlags" offset-translate="0" />
+    <map doc="DXGI_INFO_QUEUE_MESSAGE" check="true" name="Vortice.DXGI.InfoQueueMessage" offset-translate="0" />
+    <map doc="DXGI_INFO_QUEUE_FILTER_DESC" check="true" name="Vortice.DXGI.InfoQueueFilterDescription" offset-translate="0" />
+    <map doc="DXGI_INFO_QUEUE_FILTER" check="true" name="Vortice.DXGI.InfoQueueFilter" offset-translate="0" />
+    <map doc="DXGI_GAMMA_CONTROL" check="true" name="Vortice.DXGI.GammaControl" offset-translate="0" />
+    <map doc="DXGI_GAMMA_CONTROL_CAPABILITIES" check="true" name="Vortice.DXGI.GammaControlCapabilities" offset-translate="0" />
+    <map doc="DXGI_MODE_DESC" check="true" name="Vortice.DXGI.ModeDescription" offset-translate="0" />
+    <map doc="DXGI_JPEG_DC_HUFFMAN_TABLE" check="true" name="Vortice.DXGI.JpegDcHuffmanTable" offset-translate="0" />
+    <map doc="DXGI_JPEG_AC_HUFFMAN_TABLE" check="true" name="Vortice.DXGI.JpegAcHuffmanTable" offset-translate="0" />
+    <map doc="DXGI_JPEG_QUANTIZATION_TABLE" check="true" name="Vortice.DXGI.JpegQuantizationTable" offset-translate="0" />
+    <map doc="DXGI_RATIONAL" check="true" name="Vortice.DXGI.Rational" offset-translate="0" />
+    <map doc="DXGI_SAMPLE_DESC" check="true" name="Vortice.DXGI.SampleDescription" offset-translate="0" />
+    <map doc="DXGI_FRAME_STATISTICS" check="true" name="Vortice.DXGI.FrameStatistics" offset-translate="0" />
+    <map doc="DXGI_MAPPED_RECT" check="true" name="Vortice.DXGI.MappedRect" offset-translate="0" />
+    <map doc="DXGI_ADAPTER_DESC" check="true" name="Vortice.DXGI.AdapterDescription" offset-translate="0" />
+    <map doc="DXGI_OUTPUT_DESC" check="true" name="Vortice.DXGI.OutputDescription" offset-translate="0" />
+    <map doc="DXGI_SHARED_RESOURCE" check="true" name="Vortice.DXGI.SharedResource" offset-translate="0" />
+    <map doc="DXGI_SURFACE_DESC" check="true" name="Vortice.DXGI.SurfaceDescription" offset-translate="0" />
+    <map doc="DXGI_SWAP_CHAIN_DESC" check="true" name="Vortice.DXGI.SwapChainDescription" offset-translate="0" />
+    <map doc="DXGI_ADAPTER_DESC1" check="true" name="Vortice.DXGI.AdapterDescription1" offset-translate="0" />
+    <map doc="DXGI_DISPLAY_COLOR_SPACE" check="true" name="Vortice.DXGI.DisplayColorSpace" offset-translate="0" />
+    <map doc="DXGI_OUTDUPL_MOVE_RECT" check="true" name="Vortice.DXGI.OutduplMoveRect" offset-translate="0" />
+    <map doc="DXGI_OUTDUPL_DESC" check="true" name="Vortice.DXGI.OutduplDescription" offset-translate="0" />
+    <map doc="DXGI_OUTDUPL_POINTER_POSITION" check="true" name="Vortice.DXGI.OutduplPointerPosition" offset-translate="0" />
+    <map doc="DXGI_OUTDUPL_POINTER_SHAPE_INFO" check="true" name="Vortice.DXGI.OutduplPointerShapeInfo" offset-translate="0" />
+    <map doc="DXGI_OUTDUPL_FRAME_INFO" check="true" name="Vortice.DXGI.OutduplFrameInfo" offset-translate="0" />
+    <map doc="DXGI_MODE_DESC1" check="true" name="Vortice.DXGI.ModeDescription1" offset-translate="0" />
+    <map doc="DXGI_SWAP_CHAIN_DESC1" check="true" name="Vortice.DXGI.SwapChainDescription1" offset-translate="0" />
+    <map doc="DXGI_SWAP_CHAIN_FULLSCREEN_DESC" check="true" name="Vortice.DXGI.SwapChainFullscreenDescription" offset-translate="0" />
+    <map doc="DXGI_PRESENT_PARAMETERS" check="true" name="Vortice.DXGI.PresentParameters" offset-translate="0" />
+    <map doc="DXGI_ADAPTER_DESC2" check="true" name="Vortice.DXGI.AdapterDescription2" offset-translate="0" />
+    <map doc="DXGI_DECODE_SWAP_CHAIN_DESC" check="true" name="Vortice.DXGI.DecodeSwapChainDescription" offset-translate="0" />
+    <map doc="DXGI_FRAME_STATISTICS_MEDIA" check="true" name="Vortice.DXGI.FrameStatisticsMedia" offset-translate="0" />
+    <map doc="DXGI_QUERY_VIDEO_MEMORY_INFO" check="true" name="Vortice.DXGI.QueryVideoMemoryInfo" offset-translate="0" />
+    <map doc="DXGI_HDR_METADATA_HDR10" check="true" name="Vortice.DXGI.HdrMetadataHdr10" offset-translate="0" />
+    <map doc="DXGI_HDR_METADATA_HDR10PLUS" check="true" name="Vortice.DXGI.HdrMetadataHdr10plus" offset-translate="0" />
+    <map doc="DXGI_ADAPTER_DESC3" check="true" name="Vortice.DXGI.AdapterDescription3" offset-translate="0" />
+    <map doc="DXGI_OUTPUT_DESC1" check="true" name="Vortice.DXGI.OutputDescription1" offset-translate="0" />
+    <map doc="IDXGIInfoQueue" check="true" name="Vortice.DXGI.IDXGIInfoQueue" offset-translate="0" />
+    <map doc="IDXGIDebug" check="true" name="Vortice.DXGI.IDXGIDebug" offset-translate="0" />
+    <map doc="IDXGIDebug1" check="true" name="Vortice.DXGI.IDXGIDebug1" offset-translate="0" />
+    <map doc="IDXGIObject" check="true" name="Vortice.DXGI.IDXGIObject" offset-translate="0" />
+    <map doc="IDXGIDeviceSubObject" check="true" name="Vortice.DXGI.IDXGIDeviceSubObject" offset-translate="0" />
+    <map doc="IDXGIResource" check="true" name="Vortice.DXGI.IDXGIResource" offset-translate="0" />
+    <map doc="IDXGIKeyedMutex" check="true" name="Vortice.DXGI.IDXGIKeyedMutex" offset-translate="0" />
+    <map doc="IDXGISurface" check="true" name="Vortice.DXGI.IDXGISurface" offset-translate="0" />
+    <map doc="IDXGISurface1" check="true" name="Vortice.DXGI.IDXGISurface1" offset-translate="0" />
+    <map doc="IDXGIAdapter" check="true" name="Vortice.DXGI.IDXGIAdapter" offset-translate="0" />
+    <map doc="IDXGIOutput" check="true" name="Vortice.DXGI.IDXGIOutput" offset-translate="0" />
+    <map doc="IDXGISwapChain" check="true" name="Vortice.DXGI.IDXGISwapChain" offset-translate="0" />
+    <map doc="IDXGIFactory" check="true" name="Vortice.DXGI.IDXGIFactory" offset-translate="0" />
+    <map doc="IDXGIDevice" check="true" name="Vortice.DXGI.IDXGIDevice" offset-translate="0" />
+    <map doc="IDXGIFactory1" check="true" name="Vortice.DXGI.IDXGIFactory1" offset-translate="0" />
+    <map doc="IDXGIAdapter1" check="true" name="Vortice.DXGI.IDXGIAdapter1" offset-translate="0" />
+    <map doc="IDXGIDevice1" check="true" name="Vortice.DXGI.IDXGIDevice1" offset-translate="0" />
+    <map doc="IDXGIDisplayControl" check="true" name="Vortice.DXGI.IDXGIDisplayControl" offset-translate="0" />
+    <map doc="IDXGIOutputDuplication" check="true" name="Vortice.DXGI.IDXGIOutputDuplication" offset-translate="0" />
+    <map doc="IDXGISurface2" check="true" name="Vortice.DXGI.IDXGISurface2" offset-translate="0" />
+    <map doc="IDXGIResource1" check="true" name="Vortice.DXGI.IDXGIResource1" offset-translate="0" />
+    <map doc="IDXGIDevice2" check="true" name="Vortice.DXGI.IDXGIDevice2" offset-translate="0" />
+    <map doc="IDXGISwapChain1" check="true" name="Vortice.DXGI.IDXGISwapChain1" offset-translate="0" />
+    <map doc="IDXGIFactory2" check="true" name="Vortice.DXGI.IDXGIFactory2" offset-translate="0" />
+    <map doc="IDXGIAdapter2" check="true" name="Vortice.DXGI.IDXGIAdapter2" offset-translate="0" />
+    <map doc="IDXGIOutput1" check="true" name="Vortice.DXGI.IDXGIOutput1" offset-translate="0" />
+    <map doc="IDXGIDevice3" check="true" name="Vortice.DXGI.IDXGIDevice3" offset-translate="0" />
+    <map doc="IDXGISwapChain2" check="true" name="Vortice.DXGI.IDXGISwapChain2" offset-translate="0" />
+    <map doc="IDXGIOutput2" check="true" name="Vortice.DXGI.IDXGIOutput2" offset-translate="0" />
+    <map doc="IDXGIFactory3" check="true" name="Vortice.DXGI.IDXGIFactory3" offset-translate="0" />
+    <map doc="IDXGIDecodeSwapChain" check="true" name="Vortice.DXGI.IDXGIDecodeSwapChain" offset-translate="0" />
+    <map doc="IDXGIFactoryMedia" check="true" name="Vortice.DXGI.IDXGIFactoryMedia" offset-translate="0" />
+    <map doc="IDXGISwapChainMedia" check="true" name="Vortice.DXGI.IDXGISwapChainMedia" offset-translate="0" />
+    <map doc="IDXGIOutput3" check="true" name="Vortice.DXGI.IDXGIOutput3" offset-translate="0" />
+    <map doc="IDXGISwapChain3" check="true" name="Vortice.DXGI.IDXGISwapChain3" offset-translate="0" />
+    <map doc="IDXGIOutput4" check="true" name="Vortice.DXGI.IDXGIOutput4" offset-translate="0" />
+    <map doc="IDXGIFactory4" check="true" name="Vortice.DXGI.IDXGIFactory4" offset-translate="0" />
+    <map doc="IDXGIAdapter3" check="true" name="Vortice.DXGI.IDXGIAdapter3" offset-translate="0" />
+    <map doc="IDXGIOutput5" check="true" name="Vortice.DXGI.IDXGIOutput5" offset-translate="0" />
+    <map doc="IDXGISwapChain4" check="true" name="Vortice.DXGI.IDXGISwapChain4" offset-translate="0" />
+    <map doc="IDXGIDevice4" check="true" name="Vortice.DXGI.IDXGIDevice4" offset-translate="0" />
+    <map doc="IDXGIFactory5" check="true" name="Vortice.DXGI.IDXGIFactory5" offset-translate="0" />
+    <map doc="IDXGIAdapter4" check="true" name="Vortice.DXGI.IDXGIAdapter4" offset-translate="0" />
+    <map doc="IDXGIOutput6" check="true" name="Vortice.DXGI.IDXGIOutput6" offset-translate="0" />
+    <map doc="IDXGIFactory6" check="true" name="Vortice.DXGI.IDXGIFactory6" offset-translate="0" />
+    <map doc="IDXGIFactory7" check="true" name="Vortice.DXGI.IDXGIFactory7" offset-translate="0" />
+    <map doc="IDXGraphicsAnalysis" check="true" name="Vortice.DXGI.IDXGraphicsAnalysis" offset-translate="0" />
+    <map doc="ISurfaceImageSourceNative" check="true" name="Vortice.DXGI.ISurfaceImageSourceNative" offset-translate="0" />
+    <map doc="IVirtualSurfaceUpdatesCallbackNative" check="true" name="Vortice.DXGI.IVirtualSurfaceUpdatesCallbackNative" offset-translate="0" />
+    <map doc="IVirtualSurfaceImageSourceNative" check="true" name="Vortice.DXGI.IVirtualSurfaceImageSourceNative" offset-translate="0" />
+    <map doc="ISwapChainBackgroundPanelNative" check="true" name="Vortice.DXGI.ISwapChainBackgroundPanelNative" offset-translate="0" />
+    <map doc="ISurfaceImageSourceManagerNative" check="true" name="Vortice.DXGI.ISurfaceImageSourceManagerNative" offset-translate="0" />
+    <map doc="ISurfaceImageSourceNativeWithD2D" check="true" name="Vortice.DXGI.ISurfaceImageSourceNativeWithD2D" offset-translate="0" />
+    <map doc="ISwapChainPanelNative" check="true" name="Vortice.DXGI.ISwapChainPanelNative" offset-translate="0" />
+    <map doc="ISwapChainPanelNative2" check="true" name="Vortice.DXGI.ISwapChainPanelNative2" offset-translate="0" />
+    <map doc="IWindowNative" check="true" name="Vortice.DXGI.WinUI.IWindowNative" offset-translate="0" />
+    <map doc="IDesktopWindowXamlSourceNative" check="true" name="Vortice.DXGI.WinUI.IDesktopWindowXamlSourceNative" offset-translate="0" />
+    <map doc="IXamlRootNative" check="true" name="Vortice.DXGI.WinUI.IXamlRootNative" offset-translate="0" />
+  </mapping>
+</config>
